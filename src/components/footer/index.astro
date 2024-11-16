@@ -11,7 +11,7 @@ import SocialMedia from "../socialMedia/social-links.astro";
 import LogoComponentLazy from "../logoComponent-lazy.astro";
 import SiteLinkColumn from "./site-link-column.astro";
 import HoursInfo from "./hours-info.astro";
-import BackYardImg from "@/assets/images/forest-silhouette2-green2.webp";
+import ForestImg from "@/assets/images/forest-silhouette2-green2.webp";
 
 var assets: Array<PostAssetType> = [];
 var allPosts: Array<PostType> = [];
@@ -23,7 +23,13 @@ var YEAR = new Date().getFullYear();
   <div
     class="absolute top-[-200px] sm:top-[-75px] md:top-[-30px] lg:top-[-20px] right-[25px] sinkTag sink z-[10]"
   >
-    <img src={BackYardImg.src} alt="backyard" class="w-[350px] aspect-square" />
+    <img
+      src={ForestImg.src}
+      alt="forest silhouette"
+      class="w-[350px] aspect-square"
+      loading="lazy"
+      decoding="async"
+    />
   </div>
   <svg
     width="100%"
@@ -42,7 +48,10 @@ var YEAR = new Date().getFullYear();
     ></path></svg
   >
 </div>
-<footer class="main_footer relative bg-darkBlack bottom-0 w-full">
+<footer
+  class="main_footer relative bg-darkBlack bottom-0 w-full"
+  role="contentinfo"
+>
   <div class="relative w-10/12 pt-[65px] pb-[70px] justify-evenly mx-auto">
     <div
       class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:min-h-[450px] lg:mx-auto gap-[30px]"
@@ -57,7 +66,7 @@ var YEAR = new Date().getFullYear();
         <div class="">
           <div class="relative block mb-[30px]">
             <p>
-              At <span class="text-[#5b87e4] font-bold"
+              At <span class="text-secondaryC font-bold"
                 >{BusinessInfo.companyName}</span
               >, we help businesses create their narrative, stay on top of
               minds, and connect with their target market. We like to break
