@@ -1,0 +1,19 @@
+---
+const {
+    image, 
+    altText, 
+} = Astro.props;
+---
+<div
+    class = "my-10 max-h-[600px] h-[600px] relative"
+>
+    <div
+        class = "absolute w-[600px] aspect-square rounded-[50px] SWDiv overflow-hidden top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+    >
+        <img 
+            src = {image.src}
+            alt = {altText}
+            class = "object-cover w-[600px] aspect-square absolute inset-0 top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%]"
+        />
+    </div>
+</div>

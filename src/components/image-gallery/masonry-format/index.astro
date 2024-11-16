@@ -1,0 +1,37 @@
+---
+//This type of gallery is best down for images that don't need to be in a certain order
+const { images, altText } = Astro.props;
+import ImageItem from "./image-item.astro";
+let formattedArray = [];
+const SIZE = 3;
+const SIZE2 = 2;
+let toggle = true;
+if (images && images.length > 0) {
+  var column = [];
+  for (let i = 0; i < images.length; i++) {
+    column.push(images[i]);
+    if ((i + 1) % SIZE <= 0) {
+      formattedArray.push(column);
+      toggle = !toggle;
+      column = [];
+    } else if (i === images.length - 1) {
+      formattedArray.push(column);
+    }
+  }
+}
+---
+
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+    {
+      formattedArray &&
+        formattedArray.length > 0 &&
+        formattedArray.map((column) => (
+          <div class="space-y-2">
+            {column.length > 0 &&
+              column.map((item) => <ImageItem image={item} {altText} />)}
+          </div>
+        ))
+    }
+  </div>
+</div>

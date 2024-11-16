@@ -1,0 +1,40 @@
+---
+import LogoComponent from "../../logoComponent.astro";
+import type { NavItemType } from "@/util/interface.tsx";
+import { menu_links } from "@/config/navigation-map.js";
+import TopHeader from "../top-header/index.astro";
+import NavItem from "../NavItem.astro";
+import "./header.css";
+import MobileIcon from "../mobileIcon.astro";
+const { interactive } = Astro.props;
+---
+
+<header
+  id="desktop-header"
+  class=`grid text-white min-h-[50px] sm:min-h-[50px] relative z-[100] !fixed top-0 right-0 left-0 bg-[#62825D] border-b-[3px] border-b-[#ffffff] navStyle transition-all duration-500 ${interactive ? "transparentHeader" : "" }`
+>
+  <TopHeader />
+  <div class="w-10/12 my-auto mx-auto flex md:flex flex-row justify-between">
+    <LogoComponent
+      customDiv="cursor-pointer my-1 select-none hidden md:block"
+    />
+    <LogoComponent
+      customDiv="cursor-pointer my-auto flex select-none block md:hidden"
+      width={80}
+    />
+    <nav class="hidden md:block !text-white my-auto">
+      <div class="" id="navbarSupportedContent">
+        <ul class="flex">
+          {
+            menu_links &&
+              menu_links.length > 0 &&
+              menu_links.map((item: NavItemType) => <NavItem {...item} />)
+          }
+        </ul>
+      </div>
+    </nav>
+    <div class="flex md:hidden my-auto text-right relative">
+      <MobileIcon customDiv="mr-0 ml-auto cursor-pointer select-none" />
+    </div>
+  </div>
+</header>

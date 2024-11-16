@@ -1,0 +1,15 @@
+---
+import LogoComponent from "@/components/logoComponent.astro";
+import MobileIcon from "../mobileIcon.astro";
+const { interactive } = Astro.props;
+---
+
+<header
+  id="MobileHeader"
+  class=`flex flex-row fixed w-full min-h-[50px] z-[100] md:hidden fixed top-0 inset-x-0 justify-between text-white transition-all duration-500 ${interactive ? "transparentHeader" : "!bg-secondaryC"}`
+>
+  <LogoComponent
+    customDiv="justify-center flex cursor-pointer select-none py-1 ml-[1rem]"
+  />
+  <MobileIcon />
+</header>

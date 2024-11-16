@@ -1,0 +1,28 @@
+---
+const {
+  pageTitle,
+  customDescription,
+  follow,
+  OGImage,
+  canonicalUrl,
+  ToBeIndexed = true,
+} = Astro.props;
+import NavBar from "@/components/navigation/standard/index.astro";
+import BaseLayout from "./BaseLayout.astro";
+import ScrollTopButton from "@/components/buttons/ScrollTopButton/index.astro";
+---
+
+<BaseLayout
+  {pageTitle}
+  {customDescription}
+  {follow}
+  {OGImage}
+  {canonicalUrl}
+  {ToBeIndexed}
+>
+  <NavBar interactive={false} />
+  <div class="mt-[70px] lg:mt-[120px] flex-1 min-h-[100px] relative">
+    <slot />
+    <ScrollTopButton />
+  </div>
+</BaseLayout>

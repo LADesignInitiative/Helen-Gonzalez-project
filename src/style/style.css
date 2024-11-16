@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+@layer components {
+  .fancyButton {
+    @apply w-fit px-5 py-1 rounded-lg cursor-pointer select-none active:translate-x-[1px] active:translate-y-[1px] relative bg-slate-300 text-white font-bold select-none;
+  }
+}
+
+/*banner section of home page*/
+.pattern-layer {
+  animation: slide 60s linear infinite;
+  -webkit-animation: slide 60s linear infinite;
+}

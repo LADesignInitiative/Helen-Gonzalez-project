@@ -1,0 +1,37 @@
+---
+/*desktop nav item*/
+import type { NavItemType } from "@/util/interface.tsx";
+const { label, url, subDirectory } = Astro.props;
+import arrow from "@/assets/icons/white-right-chevron.webp";
+---
+
+<li
+  class="dropdown text-white cursor-pointer mr-5 !block select-none active:bg-transparent relative group"
+>
+  <a
+    href={url}
+    class="!text-white cursor-pointer !block font-primaryF select-none hover:underline"
+    >{label}</a
+  >
+  {
+    subDirectory && subDirectory.length > 0 && (
+      <ul class="absolute border-b-solid border-b-slate-100 w-fit transition-[opacity_transform] duration-500 invisible opacity-0 translate-y-[50px] group-hover:visible group-hover:opacity-100 group-hover:translate-y-[0px] ">
+        {subDirectory.map((item: NavItemType) => (
+          <li class="text-white cursor-pointer !block font-primaryF select-none hover:underline whitespace-nowrap border-solid border-b-[1px] border-slate-500 px-5 py-5 bg-slate-700 hover:bg-slate-400 w-full">
+            <a
+              href={item.url.toLowerCase()}
+              class="select-none flex font-bold justify-between w-full"
+            >
+              <span class="inline-block mr-5 ml-0">{item.label}</span>
+              <img
+                src={arrow.src}
+                class="w-[16px] h-[16px] my-auto block min-w-[16px]"
+                alt="navigation arrow"
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
+    )
+  }
+</li>

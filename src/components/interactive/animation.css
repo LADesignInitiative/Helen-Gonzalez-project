@@ -1,0 +1,81 @@
+:root {
+  --fallingDur: 1500ms;
+  --duration1: 1000ms;
+  --duration3: 3000ms;
+  --panBDur: 500ms;
+}
+
+.fallingTag {
+  transition:
+    opacity var(--fallingDur) ease,
+    transform var(--fallingDur) ease,
+    visibility;
+}
+
+.startingFallingAnim {
+  opacity: 0;
+  transform: scale(1.5);
+  visibility: hidden;
+}
+
+.RotateInTag {
+  min-height: 30px;
+}
+
+.RotateInTag > * {
+  transition: transform var(--duration1) ease;
+}
+
+.RotateOutAnim {
+  transform: rotateX(-90deg);
+}
+
+.fadeInTag {
+  transition: opacity var(--duration3) ease;
+}
+
+.fadeOut {
+  opacity: 0;
+}
+
+.floatUpTag {
+  transition:
+    opacity 500ms ease,
+    transform 500ms;
+}
+
+.floatUp {
+  transform: translateY(20px);
+  opacity: 0;
+}
+
+.sinkTag {
+  transition:
+    opacity 500ms ease,
+    transform 500ms;
+}
+
+.sink {
+  transform: translateY(-20px);
+  opacity: 0;
+}
+
+.growTag {
+  transition: width 500ms ease;
+}
+
+.shrink {
+  width: 0px;
+}
+
+.panForwardTag {
+  transform-style: preserve-3d;
+  transition:
+    opacity var(--panBDur),
+    transform var(--panBDur);
+}
+
+.panBackward {
+  opacity: 0;
+  transform: scale3d(0, 0, 0);
+}

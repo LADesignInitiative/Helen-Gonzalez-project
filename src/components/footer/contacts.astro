@@ -1,0 +1,75 @@
+---
+import ColumnLabel from "./column_label.astro";
+import { BusinessInfo } from "@/data/business-info.js";
+import {
+  formatPhoneNumber,
+  phoneNumberToNumeric,
+} from "@/hooks/number_hooks.tsx";
+---
+
+<div class="">
+  <div class="">
+    <div class="font-primaryFont relative block mb-[25px]">
+      <ColumnLabel label="Contacts" />
+    </div>
+    <div class="widget-content max-w-[400px] mx-auto">
+      <ul
+        class="contact-info clearfix text-center md:text-left md:max-w-[200px] mx-auto"
+      >
+        {
+          BusinessInfo.street && BusinessInfo.street != "" && (
+            <li class="relative block mb-1">
+              <p class="text-lg">{BusinessInfo.street}</p>
+            </li>
+          )
+        }
+        {
+          (BusinessInfo.city ||
+            BusinessInfo.state ||
+            BusinessInfo.country ||
+            BusinessInfo.zip) && (
+            <li class="relative block mb-1">
+              <p class="text-lg">
+                {BusinessInfo.city && <span>{BusinessInfo.city},</span>}
+                {BusinessInfo.state && <span>{BusinessInfo.state}</span>}
+                {BusinessInfo.zip && <span>{BusinessInfo.zip}</span>}
+              </p>
+            </li>
+          )
+        }
+        {
+          BusinessInfo.country && (
+            <li class="relative block mb-1">
+              <p class="text-lg">{BusinessInfo.country}</p>
+            </li>
+          )
+        }
+        <hr
+          class="border-slate-100 w-full sm:3/12 md:w-full mx-auto my-5 opacity-50"
+        />
+        {
+          BusinessInfo.phone && (
+            <li class="relative block mb-1">
+              <p class="text-lg">
+                <a href={`tel:${phoneNumberToNumeric(BusinessInfo.phone)}`}>
+                  {formatPhoneNumber(BusinessInfo.phone)}
+                </a>
+              </p>
+            </li>
+          )
+        }
+        {
+          BusinessInfo.email && BusinessInfo.email.length > 0 && (
+            <li class="relative block">
+              <p class="text-lg">
+                <a href={`mailto:${BusinessInfo.email}`}>
+                  {BusinessInfo.email}
+                </a>
+              </p>
+            </li>
+          )
+        }
+      </ul>
+    </div>
+  </div>
+</div>

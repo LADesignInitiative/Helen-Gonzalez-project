@@ -1,0 +1,21 @@
+---
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import ContactForm from "@/components/contact-form/split.astro";
+import Leaf from "@/components/contact-form/leaf.png";
+---
+
+<StandardNavBar pageTitle="Contact Us">
+  <div class="my-10 px-5 mx-auto py-32 relative overflow-hidden">
+    <ContactForm
+      title="Contact Us"
+      subtitle="Every project begins with a hello"
+    />
+    <div>
+      <img
+        src={Leaf.src}
+        alt="leaft"
+        class="absolute bottom-[-20px] left-[-60px] w-[300px] h-[290px]"
+      />
+    </div>
+  </div>
+</StandardNavBar>

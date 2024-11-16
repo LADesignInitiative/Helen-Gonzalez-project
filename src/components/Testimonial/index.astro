@@ -1,0 +1,79 @@
+---
+import "./style.css";
+const { testimonials } = Astro.props;
+import Carousel from "./carousel.tsx";
+import MobileCarousel from "./carousel-mobile.tsx";
+import NavButtons from "./carousel-nav.tsx";
+import TestimonialBG from "@/assets/images/background/testimonial-bg.jpg";
+import ShapeNine from "@/assets/images/shape/shape-9.png";
+import TestimonialLightBox from "./testimonial-light-box";
+---
+
+<TestimonialLightBox client:only="react" />
+<section
+  class="testimonial-section relative sec-pad mb-[10px] p-[143px_0px_150px_0px] overflow-x-hidden"
+>
+  <div
+    class="bg-layer absolute bg-center hidden md:block"
+    id="testimonial-background"
+    style=`background-image: url(${TestimonialBG.src})`
+  >
+  </div>
+  <div
+    id="shape-9"
+    class="slideOutLeft absolute left-[0px] bottom-[0px] w-[341px] h-[385px] bg-norepeat"
+    style=`background-image: url(${ShapeNine.src})`
+  >
+  </div>
+  <div class="auto-container static max-w-[1200px] py-0 px-[15px] my-0 mx-auto">
+    <div class="flex flex-wrap lg:flex-nowrap justify-between">
+      <div class="w-full lg:w-4/12 md:w-full sm:w-full title-column">
+        <div class="sec-title text-center md:text-left">
+          <span class="uppercase text-lg text-primaryC font-bold"
+            >Testimonials</span
+          >
+          <h2 class="text-4xl">Don't take our word for it.</h2>
+          <h3 class="text-2xl">See what our clients have said about us.</h3>
+          <div class="hidden md:block">
+            <NavButtons
+              client:only="react"
+              size={testimonials.length}
+              desktop={true}
+            />
+          </div>
+          <div class="block md:hidden">
+            <NavButtons
+              client:only="react"
+              size={testimonials.length}
+              desktop={false}
+            />
+          </div>
+        </div>
+      </div>
+      <div class="w-full md:w-full sm:w-full inner-column">
+        <div class="inner-content hidden md:block">
+          <Carousel testimonials={testimonials} client:only="react" />
+        </div>
+        <div class="inner-content block md:hidden mt-10">
+          <MobileCarousel testimonials={testimonials} client:only="react" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const ShapeNine = document.getElementById("shape-9");
+    let options = {
+      threshold: 1.0,
+    };
+    const ShapeNineObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        entries[0].target.classList.remove("slideOutLeft");
+      } else {
+        entries[0].target.classList.add("slideOutLeft");
+      }
+    });
+    if (ShapeNine) ShapeNineObserver.observe(ShapeNine);
+  });
+</script>

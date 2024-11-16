@@ -1,0 +1,25 @@
+---
+import Logo from "@/assets/logo/logo-white.png";
+import { BusinessInfo } from "@/data/business-info.js";
+const { customDiv, width = 150 } = Astro.props;
+---
+
+<div
+  class={`${customDiv ? customDiv : "justify-center flex cursor-pointer select-none py-1"}`}
+>
+  <a
+    href="/"
+    aria-current="page"
+    class="justify-center flex max-w-full w--current"
+  >
+    <img
+      src={Logo.src}
+      loading="lazy"
+      decoding="async"
+      class="aspect-[2/1]"
+      width={width}
+      alt={`${BusinessInfo.companyName} logo`}
+      aria-label={`${BusinessInfo.companyName} logo`}
+    />
+  </a>
+</div>

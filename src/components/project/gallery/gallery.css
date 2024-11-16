@@ -1,0 +1,127 @@
+.sub-title {
+  position: relative;
+  display: block;
+  font-size: 18px;
+  line-height: 28px;
+  /* font-family: 'Montserrat', sans-serif; */
+  font-weight: 600;
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.sec-title h2 {
+  display: block;
+  /* font-family: "Prata", serif; */
+}
+
+.auto-container {
+  position: static;
+  max-width: 1200px;
+  padding: 0px 15px;
+  margin: 0 auto;
+}
+
+/** project-section **/
+
+.project-block-one .inner-block .image-box {
+  overflow: hidden;
+}
+
+.project-block-one .inner-block .image-box img {
+  width: 100%;
+  transition: all 500ms ease;
+}
+
+.project-block-one .inner-block:hover .image-box img {
+  opacity: 0.1;
+  transform: scale(1.05);
+}
+
+.project-block-one .inner-block .content-box {
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+}
+
+.project-block-one .inner-block .image-box {
+  /* background-color: #2f7955; */
+}
+
+.project-block-one .inner-block:hover .content-box {
+  /* background-color: #2f7955; */
+  opacity: 1;
+}
+
+.project-block-one .inner-block .content-box .icon-box {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  top: -15px;
+}
+
+.project-block-one .inner-block:hover .content-box .icon-box,
+.project-block-one .inner-block:hover .content-box h3,
+.project-block-one .inner-block:hover .content-box span {
+  top: 0px;
+}
+
+.project-block-one .inner-block .content-box .icon-box {
+  color: #2f7955;
+}
+
+.project-block-one .inner-block .content-box h3,
+.project-block-one .inner-block .content-box span {
+  top: 15px;
+}
+
+.project-block-one .inner-block .content-box h3 a:hover {
+  color: #fff;
+  text-decoration: underline;
+}
+
+.project-section .filter-tabs li {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: 500;
+  color: #141417;
+  text-transform: uppercase;
+  margin-right: 40px;
+  cursor: pointer;
+  transition: all 500ms ease;
+}
+
+.project-section .upper-box .filter-tabs li {
+  float: left;
+}
+
+.project-section .filter-tabs li:last-child {
+  margin: 0px !important;
+}
+
+.project-section .filter-tabs li:before {
+  position: absolute;
+  content: "";
+  width: 0%;
+  height: 1px;
+  left: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  transition: all 500ms ease;
+}
+
+.project-section .filter-tabs li.active:before,
+.project-section .filter-tabs li:hover:before {
+  width: 100%;
+}
+
+.project-section .filter-tabs li.active,
+.project-section .filter-tabs li:hover {
+}

@@ -1,0 +1,16 @@
+---
+import "./scroll_g_style.css";
+const { image, altText = "image showcase", index } = Astro.props;
+let delayTime = 500 * index;
+---
+
+<div
+  class={`h-auto w-full relative min-h-[520px] overflow-hidden`}
+  id={`SGImage_${index + 1}`}
+>
+  <img
+    src={image.src}
+    alt={altText}
+    class={`absolute h-[520px] object-fill w-full duration-500 translate-y-[520px] transition-all md:delay-[${delayTime}ms] SGImage_${index + 1}`}
+  />
+</div>

@@ -1,0 +1,21 @@
+---
+import DarkLogo from "@/assets/logo/logo.svg";
+import WhiteLogo from "@/assets/logo/white-logo.svg";
+import { BusinessInfo } from "@/data/business-info.js";
+const { customStyle, blackLogo, logoStyle } = Astro.props;
+---
+
+<div
+  class={`${customStyle ? customStyle : "cursor-pointer block w-fit m-auto text-center select-none"}`}
+  id="LogoWrapper"
+>
+  <a href="/">
+    <img
+      src={blackLogo ? DarkLogo.src : WhiteLogo.src}
+      loading="eager"
+      decoding="async"
+      class=`${logoStyle ? logoStyle : "m-auto w-[250px] h-[70px] select-none"}`
+      alt={`${BusinessInfo.companyName} logo`}
+    />
+  </a>
+</div>

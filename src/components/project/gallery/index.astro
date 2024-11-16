@@ -1,0 +1,20 @@
+---
+//import GalleryReact from "./gallery-react.tsx";
+import "./gallery.css";
+//import Selector from "./selector.tsx";
+import GalleryContainer from "./container.tsx";
+const { ProjectGallery, customIcon } = Astro.props;
+---
+
+<section
+  class="project-section relative pt-[32px] pb-[32px]"
+  id="project-section"
+>
+  <div class="auto-container mx-auto">
+    <GalleryContainer
+      ProjectGallery={ProjectGallery}
+      customIcon={customIcon}
+      client:only="react"
+    />
+  </div>
+</section>

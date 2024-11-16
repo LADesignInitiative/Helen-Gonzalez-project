@@ -1,0 +1,10 @@
+---
+import { Icon } from "astro-icon/components";
+const { customStyle } = Astro.props;
+---
+
+<div
+  class={`inline-flex h-[50px] w-[50px] rounded-full sm:h-[70px] sm:w-[70px] ${customStyle}`}
+>
+  <Icon name="ic:outline-attach-email" class="w-9/12 h-9/12 m-auto" />
+</div>

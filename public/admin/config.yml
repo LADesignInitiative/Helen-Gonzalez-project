@@ -1,0 +1,98 @@
+---
+backend:
+  name: git-gateway
+  branch: main
+publish_mode: editorial_workflow
+media_folder: src/assets/uploads
+public_folder: src/assets/uploads
+collections:
+  - name: posts
+    label: Blog Posts
+    folder: src/pages/posts
+    create: true
+    delete: true
+    fields:
+      - name: layout
+        widget: hidden
+        label: Layout
+        default: ../../layouts/MarkdownPostLayout.astro
+      - name: title
+        widget: string
+        label: Title
+      - name: pubDate
+        widget: datetime
+        label: Published date
+      - name: description
+        widget: string
+        label: Description
+        required: false
+      - name: author
+        widget: string
+        label: Author
+      - name: featured_image
+        widget: image
+        label: Featured Image
+        choose_url: true
+        required: false
+      - name: images
+        widget: list
+        label: Images
+        required: false
+        fields:
+          - label: Image
+            name: url
+            choose_url: true
+            media_folder: src/assets/uploads
+            widget: image
+          - label: Alt text
+            name: alt
+            widget: string
+      - name: tags
+        widget: list
+        label: Tags
+        required: false
+        fields:
+          - label: Tag
+            name: tag
+            widget: string
+      - name: body
+        widget: markdown
+        label: Body
+  - name: image gallery
+    label: Image Gallery
+    folder: src/pages/demo/markdown-files
+    create: true
+    delete: true
+    fields:
+      - name: layout
+        widget: hidden
+        label: Layout
+        default: ../../layout/GalleryMarkdownLayout.astro
+      - name: title
+        widget: string
+        label: Title
+      - name: pubDate
+        widget: datetime
+        label: Published date
+      - name: description
+        widget: string
+        label: Description
+        required: false
+      - name: author
+        widget: string
+        label: Author
+      - name: thumbnail
+        widget: image
+        label: thumbnail
+        choose_url: true
+        required: false
+      - name: images
+        widget: list
+        label: Images
+        required: false
+        fields:
+          - label: Image
+            name: url
+            choose_url: true
+            media_folder: src/assets/uploads
+            widget: image

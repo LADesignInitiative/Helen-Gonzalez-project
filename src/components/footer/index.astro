@@ -1,0 +1,113 @@
+---
+//This is the footer of the website without a blog.
+import CreatorComponent from "../creatorComponent.astro";
+import { BusinessInfo } from "@/data/business-info.js";
+import "./footer_style.css";
+import type { PostType, PostAssetType } from "@/util/interface.tsx";
+import Contacts from "./contacts.astro";
+import ColumnLabel from "./column_label.astro";
+import SocialMedia from "../socialMedia/social-links.astro";
+/* code for blog */
+import LogoComponentLazy from "../logoComponent-lazy.astro";
+import SiteLinkColumn from "./site-link-column.astro";
+import HoursInfo from "./hours-info.astro";
+import BackYardImg from "@/assets/images/forest-silhouette2-green2.webp";
+
+var assets: Array<PostAssetType> = [];
+var allPosts: Array<PostType> = [];
+
+var YEAR = new Date().getFullYear();
+---
+
+<div class="relative translate-y-[5px] mt-[200px] sm:mt-[75px]">
+  <div
+    class="absolute top-[-200px] sm:top-[-75px] md:top-[-30px] lg:top-[-20px] right-[25px] sinkTag sink z-[10]"
+  >
+    <img src={BackYardImg.src} alt="backyard" class="w-[350px] aspect-square" />
+  </div>
+  <svg
+    width="100%"
+    height="100%"
+    id="svg"
+    viewBox="0 0 1440 490"
+    xmlns="http://www.w3.org/2000/svg"
+    class="transition duration-300 ease-in-out delay-150"
+    ><path
+      d="M 0,500 L 0,187 C 141.33333333333331,221.93333333333334 282.66666666666663,256.8666666666667 449,233 C 615.3333333333334,209.13333333333335 806.6666666666667,126.46666666666667 976,109 C 1145.3333333333333,91.53333333333333 1292.6666666666665,139.26666666666665 1440,187 L 1440,500 L 0,500 Z"
+      stroke="none"
+      stroke-width="0"
+      fill="#161d27"
+      fill-opacity="1"
+      class="transition-all duration-300 ease-in-out delay-150 path-0"
+    ></path></svg
+  >
+</div>
+<footer class="main_footer relative bg-darkBlack bottom-0 w-full">
+  <div class="relative w-10/12 pt-[65px] pb-[70px] justify-evenly mx-auto">
+    <div
+      class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 lg:min-h-[450px] lg:mx-auto gap-[30px]"
+    >
+      <div class="">
+        <div class="mb-10">
+          <LogoComponentLazy />
+        </div>
+        <div class="relative block mb-[25px]">
+          <ColumnLabel label="About" />
+        </div>
+        <div class="">
+          <div class="relative block mb-[30px]">
+            <p>
+              At <span class="text-[#5b87e4] font-bold"
+                >{BusinessInfo.companyName}</span
+              >, we help businesses create their narrative, stay on top of
+              minds, and connect with their target market. We like to break
+              conventions, push boundaries, and see how far we can push the
+              limits of design and technology to help clients stay competitive.
+              Every project begins with a conversation – a journey into your
+              aspirations and desires.
+            </p>
+          </div>
+          <div>
+            <h5 class="text-white text-center">Follow us</h5>
+            <SocialMedia />
+          </div>
+        </div>
+      </div>
+      <SiteLinkColumn />
+      <div class="flex flex-col gap-y-10">
+        <Contacts />
+        <div class="block md:hidden lg:block">
+          <HoursInfo />
+        </div>
+      </div>
+      <div class="hidden md:block lg:hidden">
+        <HoursInfo />
+      </div>
+    </div>
+  </div>
+  <div id="footer-bottom" class="bg-black pt-[30px] pb-[30px]">
+    <div class="auto-container">
+      <div class="grid">
+        <div class="w-full min-h-[20px] text-slate-300 text-center relative">
+          <div>
+            <span id="WebsiteName">{BusinessInfo.companyName}</span> &copy;
+            <span id="CopyRight">{YEAR}</span>
+          </div>
+          <ul class="">
+            <li class="inline-block mr-[30px]">
+              <a href="/terms-and-conditions" class="text-[15px]"
+                >Terms of Service</a
+              >
+            </li>
+            <li class="inline-block">
+              <a href="/privacy-policy" class="text-[15px]">Privacy Policy</a>
+            </li>
+          </ul>
+          <CreatorComponent
+            customStyle="sm:absolute sm:right-[10px] sm:top-0"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

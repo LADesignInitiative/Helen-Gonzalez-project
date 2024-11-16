@@ -1,0 +1,103 @@
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      const SG_BG_Parent = document?.getElementById("SG_BG_parent");
+      const SG_Animated_BG = document?.getElementById("SG-animated-BG");
+      const SGImg1 = document?.getElementById("SGImage_1");
+      const SGImg2 = document?.getElementById("SGImage_2");
+      const SGImg3 = document?.getElementById("SGImage_3");
+      const SGText = document?.getElementById("SGText");
+      const SGH3 = document?.getElementById("SGh3");
+      const SGP = document?.getElementById("SGp");
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            //images of the Scroll Gallery Section
+            if ((entry.target.id = "SGImage_1")) {
+              entry.target.children[0].classList.remove(
+                "translate-y-[520px]",
+                "md:translate-y-[520px]",
+              );
+            }
+            if ((entry.target.id = "SGImage_2")) {
+              entry.target.children[0].classList.remove(
+                "translate-y-[520px]",
+                "md:translate-y-[520px]",
+              );
+            }
+            if ((entry.target.id = "SGImage_3")) {
+              entry.target.children[0].classList.remove(
+                "translate-y-[520px]",
+                "md:translate-y-[520px]",
+              );
+            }
+          } else {
+            if ((entry.target.id = "SGImage_1")) {
+              if (
+                !entry.target.children[0].classList.contains(
+                  "translate-y-[520px]",
+                  "md:translate-y-[520px]",
+                )
+              ) {
+                entry.target.children[0].classList.add(
+                  "md:translate-y-[520px]",
+                );
+              }
+            }
+            if ((entry.target.id = "SGImage_2")) {
+              if (
+                !entry.target.children[0].classList.contains(
+                  "translate-y-[520px]",
+                  "md:translate-y-[520px]",
+                )
+              ) {
+                entry.target.children[0].classList.add(
+                  "md:translate-y-[520px]",
+                );
+              }
+            }
+            if ((entry.target.id = "SGImage_3")) {
+              if (
+                !entry.target.children[0].classList.contains(
+                  "translate-y-[520px]",
+                  "md:translate-y-[520px]",
+                )
+              ) {
+                entry.target.children[0].classList.add(
+                  "md:translate-y-[520px]",
+                );
+              }
+            }
+          }
+        });
+      };
+      const options = {
+        threshold: 0.3,
+      };
+
+      const Observer  = new IntersectionObserver(callback, options);
+
+      Observer .observe(SGImg1);
+      Observer .observe(SGImg2);
+      Observer .observe(SGImg3);
+
+      const ScrollEvent = () => {
+        if (SG_BG_Parent.getBoundingClientRect().top <= 468) {
+          SG_Animated_BG.classList.remove("translate-y-[500px]");
+          SGH3.children[0].classList.remove("md:translate-y-[-400px]");
+          SGP.children[0].classList.remove("md:translate-y-[-400px]");
+        } else {
+          if (!SG_Animated_BG.classList.contains("translate-y-[500px]")) {
+            SG_Animated_BG.classList.add("translate-y-[500px]");
+          }
+          if (!SGH3.children[0].classList.contains("md:translate-y-[-400px]")) {
+            SGH3.children[0].classList.add("md:translate-y-[-400px]");
+          }
+          if (!SGP.children[0].classList.contains("md:translate-y-[-400px]")) {
+            SGP.children[0].classList.add("md:translate-y-[-400px]");
+          }
+        }
+      };
+      window.addEventListener("scroll", ScrollEvent);
+    });
+  </script>

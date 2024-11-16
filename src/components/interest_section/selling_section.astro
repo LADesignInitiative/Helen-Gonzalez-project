@@ -1,0 +1,76 @@
+---
+import Shape3 from "./shapes/shape-3.webp";
+import Shape4 from "./shapes/shape-4.webp";
+import SellingItem from "./selling-item.astro";
+const {
+  SellingPoint1,
+  SellingPoint2,
+  SellingPoint3,
+  icon1,
+  icon2,
+  icon3,
+  BGImg,
+} = Astro.props;
+---
+
+<div
+  id="SellingPoints"
+  class="SellingPoints relative w-full p-[15px] flex mb-[60px]"
+>
+  <div class="inner-content text-center relative w-full">
+    <div class="pattern-layer hidden sm:block" id="Graphic_patterns">
+      <div
+        class="pattern-1 bg-[#2e7753] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[210px] h-[210px] rounded-[50%] opacity-10"
+      >
+      </div>
+      <div
+        class="w-full h-full absolute !opacity-100 left-[50%] right-[50%] translate-x-[-50%] top-[65%] translate-y-[-50%]"
+      >
+        {
+          BGImg && (
+            <img
+              src={BGImg.src}
+              loading="lazy"
+              decoding="async"
+              class="w-[350px] aspect-square m-auto object-cover"
+              alt="Koi Background"
+            />
+          )
+        }
+      </div>
+      <div
+        class="pattern-2 absolute animated"
+        data-wow-delay="00ms"
+        data-wow-duration="1500ms"
+        style=`background-image: url(${Shape3.src});`
+      >
+      </div>
+      <div
+        class="pattern-3 absolute animated"
+        data-wow-delay="00ms"
+        data-wow-duration="1500ms"
+        style=`background-image: url(${Shape4.src});`
+      >
+      </div>
+    </div>
+    <div class="items-center grid sm:grid-cols-2 gap-10 mx-[-15px]">
+      <div class="feature-block">
+        <SellingItem label={SellingPoint1} icon={icon1} index={1} delay="" />
+        <SellingItem
+          label={SellingPoint2}
+          icon={icon2}
+          index={2}
+          delay="delay-[200ms]"
+        />
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+        <SellingItem
+          label={SellingPoint3}
+          icon={icon3}
+          index={3}
+          delay="delay-[400ms]"
+        />
+      </div>
+    </div>
+  </div>
+</div>

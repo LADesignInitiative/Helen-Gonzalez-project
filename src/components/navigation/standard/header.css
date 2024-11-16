@@ -1,0 +1,202 @@
+/* @layer components {
+  .icon-bar {
+    @apply relative h-[2px] w-[30px] block mb-[5px] bg-[#dbdbdb] transition-all duration-300;
+  }
+} */
+
+:root {
+  --mobile-duration: 250ms;
+  --mobile-menu-close-width: 250px;
+  --subDirectoryDivDuration: all 500ms ease-out;
+}
+
+.backdrop {
+  transition: all 900ms ease;
+  visibility: hidden !important;
+  opacity: 0;
+}
+
+.backdrop-visible {
+  opacity: 0.7;
+  visibility: visible;
+  right: 100%;
+  z-index: 99;
+  -webkit-transition: all 0.8s ease-out 0s;
+  -o-transition: all 0.8s ease-out 0s;
+}
+
+.navStyle {
+  transition: opacity var(--mobile-duration) ease;
+}
+
+.hiddenNav {
+  opacity: 0;
+  display: none;
+}
+
+/*background of the header is transparent/ */
+.transparentHeader {
+  background-color: transparent !important;
+  color: #ffffff !important;
+  border-color: rgba(255, 255, 255, 0) !important;
+}
+
+/*Mobile menu animation */
+#mobile-menu {
+  transition:
+    transform var(--mobile-duration),
+    opacity var(--mobile-duration);
+}
+
+.mobile-menu-close {
+  transform: translateX(var(--mobile-menu-close-width));
+  opacity: 0.1;
+}
+
+.fa-angle-down {
+  text-align: center;
+}
+
+.fa-angle-down::before {
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  position: absolute; /* Position the pseudo-element */
+  top: 50%; /* Move the pseudo-element down by 50% of the parent's height */
+  left: 50%; /* Move the pseudo-element right by 50% of the parent's width */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* Move the pseudo-element back by half of its own width and height */
+  display: flex; /* Use flexbox to center the content vertically and horizontally */
+  align-items: center; /* Center content vertically */
+  justify-content: center; /* Center content horizontally */
+}
+
+/*hamburger menu */
+.icon-bar:last-child {
+  margin-bottom: 0px;
+}
+
+/*mobile menu close button*/
+.mobile-menu .close-btn {
+  position: absolute;
+  right: 25px;
+  top: 10px;
+  line-height: 30px;
+  width: 24px;
+  text-align: left;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 10;
+  -webkit-transition: all 0.9s ease;
+  -moz-transition: all 0.9s ease;
+  -ms-transition: all 0.9s ease;
+  -o-transition: all 0.9s ease;
+  transition: all 0.9s ease;
+}
+
+.mobile-menu-visible .mobile-menu .close-btn {
+  -webkit-transform: rotate(360deg);
+  -ms-transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.mobile-menu .close-btn:hover {
+  -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+
+.header_top {
+  position: relative;
+  width: 100%;
+  padding: 14px 0px 30px 0px;
+}
+
+.header_top .shape {
+  position: absolute;
+  left: 40%;
+  bottom: 0px;
+  width: 76px;
+  height: 41px;
+  background-repeat: no-repeat;
+}
+
+.header_top .social-links li {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-right: 25px;
+}
+
+.header_top .social-links li:last-child {
+  margin: 0px !important;
+}
+
+.header_top .social-links li a {
+  font-size: 14px;
+}
+
+.header_top a {
+  display: inline-block;
+  color: #fff;
+}
+
+.header_top p {
+  font-size: 16px;
+  color: #fff;
+}
+
+.header_top .info-box li {
+  position: relative;
+  display: inline-block;
+  float: left;
+  margin-right: 60px;
+  padding-left: 25px;
+}
+
+.header_top .info-box li:last-child {
+  margin: 0px !important;
+}
+
+.header_top .info-box li a:hover {
+  text-decoration: underline;
+}
+
+.header_top .info-box li .icon-box {
+  position: absolute;
+  left: 0px;
+  top: 4px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.header_top .info-box li:before {
+  position: absolute;
+  content: "";
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 1px;
+  height: 20px;
+  top: 4px;
+  right: -30px;
+}
+
+.header_top .info-box li:last-child:before {
+  display: none;
+}
+
+.box_shadow {
+  box-shadow: 0px 25px 15px 0px rgba(0, 0, 0, 0.1);
+}
+
+.icon-bar {
+  position: relative;
+  height: 2px;
+  width: 30px;
+  display: block;
+  margin-bottom: 5px;
+  background-color: #dbdbdb;
+}

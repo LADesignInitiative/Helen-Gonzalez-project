@@ -1,0 +1,23 @@
+---
+import { BusinessInfo } from "@/data/business-info";
+import { formatPhone } from "@/hooks/number";
+---
+
+<div
+  class="h-fit bg-[#9EDF9C] sm:h-[30px] w-full block text-center sm:text-left sm:flex sm:flex-row justify-between text-[#526E48] [&>div]:px-5 md:[&>div]:px-20 text-lg [&>div]:my-auto font-primaryF"
+>
+  <div>
+    <b>Phone:</b>
+    <a
+      class="text-black underline pl-1 hover:text-secondaryC text-sm md:text-lg hover:underline"
+      href={`tel:${BusinessInfo.phone}`}>{formatPhone(BusinessInfo.phone)}</a
+    >
+  </div>
+  <div>
+    <b>Email:</b>
+    <a
+      class="text-black underline pl-1 hover:text-secondaryC text-sm md:text-lg hover:underline"
+      href={`mailto:${BusinessInfo.email}`}>{BusinessInfo.email}</a
+    >
+  </div>
+</div>

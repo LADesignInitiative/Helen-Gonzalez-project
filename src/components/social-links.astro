@@ -1,0 +1,62 @@
+---
+const { customStyle } = Astro.props;
+import { BusinessInfo } from "@/data/business-info.js";
+const { followUsText } = Astro.props;
+---
+
+<div class={`${customStyle ? customStyle : "grid sm:flex sm:flex-row"}`}>
+  {
+    followUsText && (
+      <div>
+        <p>Follow Us:</p>
+      </div>
+    )
+  }
+  <div class="text-white sm:ml-5 [&>div]:mr-5 flex">
+    {
+      BusinessInfo.twitter && (
+        <div>
+          <a href={BusinessInfo.twitter}>
+            <span class="fab fa-twitter" />
+          </a>
+        </div>
+      )
+    }
+    {
+      BusinessInfo.facebook && (
+        <div>
+          <a href={BusinessInfo.facebook}>
+            <span class="fab fa-facebook-square" />
+          </a>
+        </div>
+      )
+    }
+    {
+      BusinessInfo.pinterest && (
+        <div>
+          <a href={BusinessInfo.pinterest}>
+            <span class="fab fa-pinterest-p" />
+          </a>
+        </div>
+      )
+    }
+    {
+      BusinessInfo.instagram && (
+        <div>
+          <a href={BusinessInfo.instagram}>
+            <span class="fab fa-instagram" />
+          </a>
+        </div>
+      )
+    }
+    {
+      BusinessInfo.youtube && (
+        <div>
+          <a href={BusinessInfo.youtube}>
+            <span class="fab fa-youtube" />
+          </a>
+        </div>
+      )
+    }
+  </div>
+</div>

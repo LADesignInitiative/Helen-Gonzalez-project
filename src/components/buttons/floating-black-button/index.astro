@@ -1,0 +1,28 @@
+---
+import "./style.css";
+const {
+    link, 
+    label, 
+    newTab = true, 
+    } = Astro.props; 
+---
+{newTab ?
+<a 
+    href = {link}
+    target="_blank"
+    >
+    <div 
+        role="button" 
+        class = "bg-slate-800 rounded-lg px-10 py-5 block text-white leading-[20px] mx-auto my-10 active:translate-x-[1px] active:translate-y-[1px] text-center w-fit cursor-pointer hover:bg-slate-700 floatAnim"
+    >{label}</div>
+</a>
+:
+<a 
+    href={link}
+    >
+    <div 
+        role="button" 
+        class = "bg-slate-800 rounded-lg px-10 py-5 block text-white leading-[20px] mx-auto my-10 active:translate-x-[1px] active:translate-y-[1px] text-center w-fit cursor-pointer hover:bg-slate-700 floatAnim"
+    >{label}</div>
+</a>
+}

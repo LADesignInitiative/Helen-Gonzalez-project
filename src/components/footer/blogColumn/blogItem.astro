@@ -1,0 +1,54 @@
+---
+import TagList  from '../../blogComponents/tagList.astro'
+import LogoComponent from '@/components/logoComponent.astro';
+const {
+  title,
+  pubDate,
+  description,
+  author, 
+  featured_image,
+  tags,
+  body, 
+  url, 
+  thumbnail, 
+} = Astro.props;
+let datePublished : Date | null = pubDate ? new Date(pubDate)  : null; 
+---
+<a href ={url}> 
+<div class = "grid relative max-w-[500px] overflow-hidden mb-10 text-white gap-5 cursor-pointer hover:bg-[#352f30] hover:[&>div>img]:scale-150">
+    <div
+        class = "overflow-hidden w-full h-[100px] m-auto rounded-md"
+    >
+    {thumbnail ?
+         <img 
+            src = {thumbnail}
+            alt = `${title} image`
+            class = "w-full h-full object-cover transition-all duration-[2000ms]"
+        />   
+        : 
+        <div 
+            class = "bg-[#5b87e4] w-full h-full"
+        >
+            <LogoComponent 
+                blackLogo = {false} 
+                customStyle = "w-full h-full bg-[#5b87e4] justify-center py-1"
+                logoStyle = "w-5/12 h-auto mx-auto object-fit"
+                disableLink = {true}
+            />
+        </div>
+    }
+
+    </div>
+    <div
+        class = "grid"
+    >
+        <h6
+            class = "font-bold text-lg"
+        >{title}</h6>
+        <div>
+            <span>By {author}</span> | 
+            <span>{datePublished?.toLocaleDateString('en-US')}</span>
+        </div>
+    </div>
+</div>
+</a>

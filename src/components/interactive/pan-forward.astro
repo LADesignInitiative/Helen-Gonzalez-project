@@ -1,0 +1,7 @@
+---
+const { customStyle } = Astro.props;
+---
+
+<div class={`${customStyle ? customStyle : ""} panForwardTag panBackward`}>
+  <slot />
+</div>

@@ -1,0 +1,7 @@
+.MessageFadeOut {
+  opacity: 0;
+  transform: translateY(-50px) translateX(-50%);
+  transition:
+    opacity 1s ease-in,
+    transform 1s ease-in;
+}

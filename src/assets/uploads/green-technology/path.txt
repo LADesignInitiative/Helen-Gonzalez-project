@@ -1,0 +1,5 @@
+
+/src/assets/uploads/green-technology/picture-1.jpg
+/src/assets/uploads/green-technology/picture-2.jpg
+/src/assets/uploads/green-technology/picture-3.jpg
+/src/assets/uploads/green-technology/thumbnail.jpg

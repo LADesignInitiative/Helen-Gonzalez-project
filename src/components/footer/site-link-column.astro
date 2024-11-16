@@ -1,0 +1,22 @@
+---
+import { menu_links } from "@/config/navigation-map.js";
+import ColumnLabel from "./column_label.astro";
+import type { MenuLinks } from "@/util/interface";
+---
+
+<div class="widget-content flex flex-col text-left md:text-center">
+  <ColumnLabel label="Navigation" />
+  {
+    menu_links && menu_links.length > 0 && (
+      <ul class="contact-info clearfix">
+        {menu_links.map((links: MenuLinks, index: number): any => (
+          <a href={links.url}>
+            <li class="relative block mb-[20px] !text-white text-center">
+              <p class="text-lg">{links.label as string}</p>
+            </li>
+          </a>
+        ))}
+      </ul>
+    )
+  }
+</div>

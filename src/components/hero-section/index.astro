@@ -1,0 +1,37 @@
+---
+/*This slider is only for the homepage */
+import Slider from "../imageSlider/slider.tsx";
+import TitleSection from "../TitleComponent/index.astro";
+import Slide1 from "@/assets/slides/hero/slide-1.webp";
+import Slide2 from "@/assets/slides/hero/slide-2.webp";
+import Slide3 from "@/assets/slides/hero/slide-3.webp";
+import Grass from "@/assets/images/shape/shape-2.png";
+
+var HeroImages: Array<ImageMetadata> = [];
+try {
+  HeroImages.push(Slide1);
+  HeroImages.push(Slide2);
+  HeroImages.push(Slide3);
+} catch (error) {
+  console.log("Error: ", error);
+}
+---
+
+<section
+  id="BannerSection"
+  class="relative text-center block bg-cover bg-no-repeat bg-center overflow-hidden min-h-[80vh] w-full scrollToTopIndicator"
+>
+  <div
+    class="pattern-layer absolute left-0 right-0 bottom-[-1px] bg-repeat-x h-[54px] w-full z-[19]"
+    style=`background-image:url(${Grass.src})`
+  >
+  </div>
+  <TitleSection
+    title="Make your vision an ideal landscape come to life"
+    subtitle="We help homeowners craft beauty through nature's design"
+    button_label="Hire us now"
+    link="/contact"
+    wrapperStyle="w-11/12 sm:max-w-[1000px] mx-auto"
+  />
+  <Slider images={HeroImages} darkMask={true} name="hero" client:load />
+</section>

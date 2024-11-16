@@ -1,0 +1,30 @@
+.subDirectoryDiv {
+  transition: max-height 200ms ease;
+  overflow-y: hidden;
+}
+
+.subDirectory-closed {
+  max-height: 0px !important;
+}
+
+/*Mobile menu arrow */
+.menu-arrow {
+  transition: transform 500ms;
+}
+
+.menu-arrow-open {
+  transform: rotateZ(-90deg);
+}
+
+.currentPage {
+  position: relative;
+}
+.currentPage::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 45px;
+  border-left: 5px solid #fff;
+  z-index: 100;
+}

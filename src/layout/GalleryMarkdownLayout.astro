@@ -1,0 +1,20 @@
+---
+import StandardNavBar from "./standard-nav-bar.astro";
+import Gallery from "@/components/image-gallery/squared-gallery/index.tsx";
+
+const { frontmatter, canonicalUrl } = Astro.props;
+---
+
+<StandardNavBar {canonicalUrl}>
+  <div class="mx-auto max-w-7xl sm:px-6 lg:px-8 py-10">
+    <h1 class="text-2xl font-bold font-primaryF text-center my-10 capitlize">
+      {frontmatter.title}
+    </h1>
+    <Gallery
+      images={frontmatter.images}
+      altText={frontmatter.title}
+      client:only="react"
+    />
+    <slot />
+  </div>
+</StandardNavBar>

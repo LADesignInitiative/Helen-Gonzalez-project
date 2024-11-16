@@ -1,0 +1,75 @@
+---
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import HeroSection from "@/components/hero-section/index.astro";
+import CTA from "@/components/contact-form/CTA.astro";
+import TestimonialSection from "@/components/Testimonial/index.astro";
+import { testimonials } from "@/data/testimonials";
+---
+
+<StandardNavBar>
+  <HeroSection />
+  <TestimonialSection testimonials={testimonials} />
+  <CTA
+    title="Let's discuss your project!"
+    ,
+    subtitle="Every project begins with a hello."
+    ,
+    BTNLabel="Send"
+    ,
+  />
+</StandardNavBar>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    /* for the animations throughout the webpage*/
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("fallingTag")) {
+            entry.target.classList.remove("startingFallingAnim");
+          }
+          if (entry.target.classList.contains("floatUpTag")) {
+            entry.target.classList.remove("floatUp");
+          }
+          if (entry.target.classList.contains("sinkTag")) {
+            entry.target.classList.remove("sink");
+          }
+        } else {
+          if (entry.target.classList.contains("fallingTag")) {
+            entry.target.classList.add("startingFallingAnim");
+          }
+          if (
+            entry.target.classList.contains("floatUpTag") &&
+            !entry.target.classList.contains("floatUp")
+          ) {
+            entry.target.classList.add("floatUp");
+          }
+
+          if (
+            entry.target.classList.contains("sinkTag") &&
+            !entry.target.classList.contains("sink")
+          ) {
+            entry.target.classList.add("sink");
+          }
+        }
+      });
+    };
+    const options = {
+      threshold: 0.1,
+    };
+    const observer = new IntersectionObserver(callback, options);
+    const FallFromTop = document.getElementsByClassName("fallingTag ");
+    for (var i = 0; i < FallFromTop.length; i++) {
+      observer.observe(FallFromTop[i]);
+    }
+
+    const FloatUpTag = document.getElementsByClassName("floatUpTag");
+    for (var i = 0; i < FloatUpTag.length; i++) {
+      observer.observe(FloatUpTag[i]);
+    }
+
+    const SinkTag = document.getElementsByClassName("sinkTag");
+    for (var i = 0; i < SinkTag.length; i++) {
+      observer.observe(SinkTag[i]);
+    }
+  });
+</script>

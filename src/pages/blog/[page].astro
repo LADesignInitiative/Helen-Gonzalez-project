@@ -1,0 +1,98 @@
+---
+export const prerender = true;
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import RenderPagination from "@/components/paginatedBlog/renderPostPagination.tsx";
+import { createStaticPathArray } from "@/hooks/blogHooks.ts";
+import Searchbar from "@/components/search/index.astro";
+import BlogPreview from "@/components/blogComponents/previewLink.astro";
+import Banner from "@/components/small_banner/index.astro";
+import type { PostType, PostAssetType } from "@/util/interface.tsx";
+
+export async function getStaticPaths(): Promise<any> {
+  const PAGE_SIZE: number = 6;
+  var allPosts: Array<PostType> | [] = [];
+  var totalPages: number = 0;
+  try {
+    allPosts = await Astro.glob("../posts/*.md");
+    totalPages = Math.ceil(allPosts.length / PAGE_SIZE);
+  } catch (error) {
+    allPosts = [];
+  }
+  var assets: Array<PostAssetType> = [];
+  try {
+    assets = await Astro.glob("../../assets/uploads/*");
+  } catch (error) {
+    console.log("error in retrieving blog assets: ", error);
+    assets = [];
+  }
+  return createStaticPathArray({
+    allPosts,
+    PAGE_SIZE,
+    totalPages,
+    assets,
+  });
+}
+const { page } = Astro.params;
+const { totalPages, assets, paginatedArray, totalPosts, PAGE_SIZE } =
+  Astro.props;
+let inBound =
+  page && typeof parseInt(page) === "number" && parseInt(page) <= totalPages;
+if (!inBound && totalPages != 0) {
+  return Astro.redirect("/error");
+}
+---
+
+<StandardNavBar pageTitle="Blog posts">
+  <Banner title="Blog Posts" />
+  <div class="mb-[100px] w-10/12 mx-auto mt-10" id="content-wrapper">
+    <Searchbar />
+    {
+      totalPosts === 0 && (
+        <h2 class="text-center text-2xl my-5">
+          There are currently no blog posts published at the moment.
+        </h2>
+      )
+    }
+    {
+      totalPages > 1 && (
+        <RenderPagination
+          pageSize={PAGE_SIZE}
+          totalCount={totalPosts as number}
+          currentPage={parseInt(page)}
+          totalPages={totalPages}
+          isMobile={true}
+          client:load
+        />
+      )
+    }
+    {
+      paginatedArray && (
+        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-5 mt-10">
+          {(paginatedArray as any).map(async (post: PostType) => {
+            return (
+              <BlogPreview
+                {...post.frontmatter}
+                url={post.url}
+                thumbnail={post.featured_image}
+              />
+            );
+          })}
+        </div>
+      )
+    }
+    {
+      totalPages > 1 && (
+        <div class="w-full h-auto">
+          <RenderPagination
+            pageSize={PAGE_SIZE}
+            totalCount={totalPosts as number}
+            currentPage={parseInt(page)}
+            totalPages={totalPages}
+            isMobile={false}
+            client:load
+          />
+        </div>
+      )
+    }
+  </div>
+</StandardNavBar>

@@ -1,0 +1,40 @@
+  <script is:inline>
+    document.addEventListener("astro:page-load", () => {
+      //Code for animations for the interest section
+      const GraphicPatterns = document.getElementById("Graphic_patterns");
+      const PatternTwo = document.querySelector(".pattern-2");
+      const PatternThree = document.querySelector(".pattern-3");
+
+      const callback = (entries) => {
+        entries.forEach((entry) => {
+          if (entry.target.id === "Graphic_patterns") {
+            PatternTwo?.classList.toggle("slideInRight", entry.isIntersecting);
+            PatternThree?.classList.toggle("slideInLeft", entry.isIntersecting);
+          }
+
+          if (entry.isIntersecting) {
+            if (entry.target.classList.contains("SellExperience")) {
+              entry.target.classList.remove("fadeOutDown");
+            }
+          } else {
+            if (entry.target.classList.contains("SellExperience")) {
+              if (!entry.target.classList.contains("fadeOutDown")) {
+                entry.target.classList.add("fadeOutDown");
+              }
+            }
+          }
+        });
+      };
+
+      const options = { threshold: 0.8 };
+      const Observer = new IntersectionObserver(callback, options);
+
+      Observer.observe(GraphicPatterns);
+
+      document.querySelectorAll(".SellExperience").forEach((entry) => {
+        if (entry) {
+          Observer.observe(entry);
+        }
+      });
+    });
+  </script>

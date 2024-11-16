@@ -1,0 +1,33 @@
+---
+import { BusinessInfo } from "@/data/business-info";
+import ColumnLabel from "./column_label.astro";
+import type { HoursInfoType } from "@/util/interface.tsx";
+---
+
+<div
+  class="widget-content flex flex-col text-left md:text-center"
+  aria-labelledby="business-hours-label"
+>
+  <ColumnLabel label="Business Hours" id="business-hours-label" />
+  <div class="">
+    {
+      BusinessInfo.hours && BusinessInfo.hours.length > 0 && (
+        <ul
+          class="contact-info clearfix max-w-[200px] mx-auto"
+          aria-label="Business hours"
+        >
+          {BusinessInfo.hours.map((item: HoursInfoType, index: number): any => (
+            <li
+              class="relative block mb-1 !text-white text-center sm:text-left"
+              role="listitem"
+            >
+              <p>
+                {item.day}: {item.hours}
+              </p>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</div>

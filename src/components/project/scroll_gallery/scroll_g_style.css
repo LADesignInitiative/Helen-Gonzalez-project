@@ -1,0 +1,18 @@
+:root {
+  --ImgHeight: 480px;
+  --BGHeight: 500px;
+}
+
+.SGImgCont {
+  min-height: var(--ImgHeight);
+}
+
+.SGImage_1,
+.SGImage_2,
+.SGImage_3 {
+  height: var(--ImgHeight);
+}
+
+.SGImgStart {
+  transform: translateY(var(--ImgHeight));
+}

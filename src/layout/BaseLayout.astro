@@ -1,0 +1,67 @@
+---
+import SEO from "@/components/SEO.astro";
+import "@/components/interactive/animation.css";
+const {
+  pageTitle,
+  customDescription,
+  OGImage,
+  canonicalUrl = null,
+  ToBeIndexed = true,
+} = Astro.props;
+import { ViewTransitions } from "astro:transitions";
+import Footer from "@/components/footer/index.astro";
+import "@/style/style.css";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>{pageTitle}</title>
+    <SEO
+      title={pageTitle}
+      description={customDescription}
+      image={OGImage}
+      {canonicalUrl}
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="author" content="" />
+    {!ToBeIndexed && <meta name="robots" content="noindex" />}
+    <link
+      href="/style/global.css"
+      rel="stylesheet"
+      type="text/css"
+      media="print"
+      onload="this.media='all'; this.onload=null;"
+    />
+    <!-- <link
+      rel="preload"
+      href="../fonts/CormorantGaramond-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="../fonts/Outfit-Regular.woff2"
+      as="font"
+      type="font/woff2"
+      crossorigin="anonymous"
+    /> -->
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <link
+      href="/assets/icons/favicon.svg"
+      rel="shortcut icon"
+      type="image/svg"
+    />
+    <ViewTransitions />
+  </head>
+
+  <body class="h-full relative" id="body">
+    <slot />
+
+    <Footer />
+  </body>
+</html>

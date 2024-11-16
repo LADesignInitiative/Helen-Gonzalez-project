@@ -1,0 +1,53 @@
+---
+import MobileMenu from "../MobileMenu/index.astro";
+import "./header.css";
+import DesktopHeader from "./desktopHeader.astro";
+const { interactive } = Astro.props;
+---
+
+<!-- Fav Icon -->
+<div
+  id="backdrop"
+  class="fixed left-0 top-0 w-full h-full bg-secondaryC transition-all duration-[900ms] opacity-0 invisible"
+>
+</div>
+<DesktopHeader interactive={interactive} />
+<!-- <MobileHeader {interactive} /> -->
+<MobileMenu />
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const MobileToggler = document.getElementById("mobile-nav-toggler");
+    const CloseBtn = document.getElementById("close-btn");
+    const MobileMenu = document.getElementById("mobile-menu");
+    const Backdrop = document.getElementById("backdrop");
+    const OpenMenu = () => {
+      if (MobileMenu?.classList.contains("mobile-menu-close")) {
+        MobileMenu?.classList.remove("mobile-menu-close");
+        Backdrop?.classList.add("backdrop-visible");
+      } else {
+        MobileMenu?.classList.add("mobile-menu-close");
+        Backdrop?.classList.remove("backdrop-visible");
+      }
+    };
+
+    const CloseMenu = () => {
+      if (!MobileMenu?.classList.contains("mobile-menu-close")) {
+        MobileMenu?.classList.add("mobile-menu-close");
+        Backdrop?.classList.remove("backdrop-visible");
+      }
+    };
+    const CheckIfClickedOutside = (event) => {
+      if (
+        !MobileMenu?.classList.contains("mobile-menu-close") &&
+        !MobileToggler?.contains(event.target) &&
+        !MobileMenu?.contains(event.target)
+      ) {
+        MobileMenu?.classList.add("mobile-menu-close");
+        Backdrop?.classList.remove("backdrop-visible");
+      }
+    };
+    MobileToggler?.addEventListener("mousedown", OpenMenu);
+    CloseBtn?.addEventListener("mousedown", CloseMenu);
+    window.addEventListener("mousedown", CheckIfClickedOutside);
+  });
+</script>

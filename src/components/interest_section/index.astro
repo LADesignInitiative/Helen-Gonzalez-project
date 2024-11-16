@@ -1,0 +1,36 @@
+---
+//The interest section requires addition JavaScript code for the animations to work.
+//See interest.astro file in the pages directory
+import "./about_style.css";
+import LeftContent from "./LeftContent.astro";
+import SellingSection from "./selling_section.astro";
+const {
+  SellingPoint1 = "100% Guarantee Services",
+  SellingPoint2 = "Environmental Friendly",
+  SellingPoint3 = "Dedicated Support Team",
+  icon1,
+  icon2,
+  icon3,
+
+  //BGImg is an optional image for the background of the selling section
+  //format: 350*350 png
+  BGImg,
+} = Astro.props;
+---
+
+<section class="py-[70px] sm:py-[130px] relative overflow-hidden">
+  <div class="static max-w-[1200px] my-0 mx-auto py-0 px-[15px]">
+    <div class="items-center grid sm:grid-cols-2">
+      <LeftContent />
+      <SellingSection
+        {SellingPoint1}
+        {SellingPoint2}
+        {SellingPoint3}
+        {icon1}
+        {icon2}
+        {icon3}
+        {BGImg}
+      />
+    </div>
+  </div>
+</section>

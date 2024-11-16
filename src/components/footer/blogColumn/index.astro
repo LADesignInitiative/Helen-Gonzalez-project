@@ -1,0 +1,21 @@
+---
+import type { formattedPostType } from "@/util/interface";
+import ColumnLabel from "../column_label.astro";
+import BlogItem from "./blogItem.astro";
+const { postSelection } = Astro.props;
+---
+
+<div>
+  <ColumnLabel label="Blog" />
+  {
+    postSelection && postSelection.length > 0 ? (
+      postSelection.map((post: formattedPostType, index: number) => (
+        <BlogItem {...post} thumbnail={post.featured_image} />
+      ))
+    ) : (
+      <div class="text-white text-base text-center">
+        There are currently no posts.
+      </div>
+    )
+  }
+</div>

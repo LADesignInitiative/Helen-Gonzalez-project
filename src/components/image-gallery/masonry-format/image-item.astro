@@ -1,0 +1,11 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+const { image, altText, customStyle } = Astro.props;
+---
+
+<img
+  class={`${customStyle ? customStyle : "w-full h-auto object-cover"}`}
+  src={image.src}
+  alt={altText}
+/>
