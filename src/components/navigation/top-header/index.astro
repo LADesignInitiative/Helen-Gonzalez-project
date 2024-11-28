@@ -1,19 +1,45 @@
 ---
 import { BusinessInfo } from "@/data/business-info";
 import { formatPhone } from "@/hooks/number";
+import Leaf from "@/assets/images/shape/shape-16-dark.png";
+import PhoneIcon from "@/assets/icons/phone-dark-2.png";
+import EmailIcon from "@/assets/icons/email.webp";
 ---
 
 <div
-  class="h-fit bg-[#9EDF9C] sm:h-[30px] w-full block text-center sm:text-left sm:flex sm:flex-row justify-between text-[#526E48] [&>div]:px-5 md:[&>div]:px-20 text-lg [&>div]:my-auto font-primaryF"
+  class="hidden sm:block h-fit bg-[#9EDF9C] sm:h-[30px] w-full text-center sm:text-left sm:flex sm:flex-row justify-between text-[#526E48] [&>div]:px-5 md:[&>div]:px-20 text-lg [&>div]:my-auto font-primaryF relative"
 >
-  <div>
+  <div class="flex flex-row gap-x-[5px]">
+    <img
+      src={PhoneIcon.src}
+      alt="phone"
+      class="w-[16px] h-[16px] my-auto"
+      loading="lazy"
+      decoding="async"
+    />
     <b>Phone:</b>
     <a
       class="text-black underline pl-1 hover:text-secondaryC text-sm md:text-lg hover:underline"
       href={`tel:${BusinessInfo.phone}`}>{formatPhone(BusinessInfo.phone)}</a
     >
   </div>
-  <div>
+  <div class="absolute bottom-0 left-[50%] translate-x-[-50%]">
+    <img
+      src={Leaf.src}
+      alt="leaf"
+      class="w-[76px] h-[41px]"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+  <div class="flex flex-row gap-x-[5px]">
+    <img
+      src={EmailIcon.src}
+      alt="email"
+      class="w-[16px] h-[16px] my-auto"
+      loading="lazy"
+      decoding="async"
+    />
     <b>Email:</b>
     <a
       class="text-black underline pl-1 hover:text-secondaryC text-sm md:text-lg hover:underline"

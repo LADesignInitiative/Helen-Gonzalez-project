@@ -15,8 +15,16 @@ const TestimonialLightBox = () => {
     TestimonialLightBoxDisplay.set(false);
   };
   const lightboxRef = useRef<any>(null);
-  const { testimonial, name, designation, rating, profile_image } =
-    $LightBoxContent;
+  const {
+    testimonial,
+    name,
+    designation,
+    rating,
+    profile_image,
+    date,
+    location,
+    platform,
+  } = $LightBoxContent;
 
   const checkIfClickedOutside = (evt: MouseEvent) => {
     if (lightboxRef?.current && !lightboxRef?.current?.contains(evt.target)) {
@@ -44,6 +52,7 @@ const TestimonialLightBox = () => {
             <p>{testimonial}</p>
           </div>
           <Rating rating={rating} />
+          {date && <span className="mb-5">{date}</span>}
           <div className="relative flex gap-x-5">
             {profile_image && (
               <figure className="">
@@ -63,6 +72,16 @@ const TestimonialLightBox = () => {
               <span className="relative mb-[2px] block text-base sm:text-xl">
                 {designation}
               </span>
+              {location && (
+                <span className="relative mb-[2px] block text-base sm:text-xl text-slate-500 italic">
+                  {location}
+                </span>
+              )}
+              {platform && (
+                <span className="relative mb-[2px] block text-base sm:text-xl font-bold">
+                  {platform}
+                </span>
+              )}
             </div>
           </div>
           <button

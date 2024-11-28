@@ -1,3 +1,5 @@
+import type { NullLiteral } from "typescript";
+
 export interface formattedPostType {
   title: string;
   pubDate: Date;
@@ -39,9 +41,12 @@ export type ProjectType = {
 export type CarouselItemType = {
   testimonial: string;
   name: string;
-  designation: string;
+  designation?: string;
   rating: 1 | 2 | 3 | 4 | 5;
   profile_image: string | HTMLImageElement;
+  date?: string | null;
+  location?: string | null;
+  platform?: string;
 };
 
 export type PricingType = {
@@ -281,4 +286,8 @@ export type TestimonialObjType = {
   designation?: string;
   rating?: 1 | 2 | 3 | 4 | 5;
   profile_image?: any;
+  date?: string | null;
+  platform?: string | null;
+  url?: string;
+  location?: string | null;
 };

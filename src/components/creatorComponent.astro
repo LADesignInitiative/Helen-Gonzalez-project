@@ -3,15 +3,14 @@ const { customStyle } = Astro.props;
 ---
 
 <div id="CreatorContainer" class={`${customStyle}`}>
-  <div class="mx-auto">
-    Developed by &nbsp;
-    <span class="underline cursor-pointer font-bold text-lg">
-      <a
-        rel="nofollow"
-        aria-label=`Agency website - Opens in new tab`
-        href="https://www.LADesignInitiative.com"
-        target="_blank">LA Design Initative</a
-      >
-    </span>
+  <div class="mx-auto w-8/12">
+    <a
+      rel="nofollow"
+      aria-label=`Agency website - Opens in new tab`
+      href="https://www.LADesignInitiative.com"
+      class="underline cursor-pointer font-bold text-lg"
+      target="_blank">Website design and development</a
+    > by
+    <span class=""> LA Design Initative </span>
   </div>
 </div>

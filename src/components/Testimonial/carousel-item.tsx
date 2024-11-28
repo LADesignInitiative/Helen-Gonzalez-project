@@ -13,7 +13,16 @@ import {
 import { useStore } from "@nanostores/react";
 
 const Item = (props: CarouselItemType) => {
-  const { testimonial, name, designation, rating, profile_image } = props;
+  const {
+    testimonial,
+    name,
+    designation,
+    rating,
+    profile_image,
+    date = null,
+    location = null,
+    platform = null,
+  } = props;
   const $LightBoxText: any = useStore(TestimonialLightBoxContent);
   const $DisplayLightBox: any = useStore(TestimonialLightBoxDisplay);
   const OpenLightBox = () => {
@@ -23,6 +32,9 @@ const Item = (props: CarouselItemType) => {
       designation,
       rating,
       profile_image,
+      date,
+      location,
+      platform,
     };
     TestimonialLightBoxContent.set(testimonialObj);
     TestimonialLightBoxDisplay.set(true);
@@ -58,6 +70,11 @@ const Item = (props: CarouselItemType) => {
           )}
         </div>
         <Rating rating={rating} />
+        {date && (
+          <span className="designation relative mb-[2px] block text-base sm:text-xl text-slate-400">
+            {date}
+          </span>
+        )}
         <div className="author-box relative flex pl-[65px]">
           {profile_image && (
             <figure className="author-thumb absolute">
@@ -73,9 +90,21 @@ const Item = (props: CarouselItemType) => {
             <h5 className="relative mb-[2px] block text-lg font-medium sm:text-4xl">
               {name}
             </h5>
-            <span className="designation relative mb-[2px] block text-base sm:text-xl">
-              {designation}
-            </span>
+            {designation && (
+              <span className="designation relative mb-[2px] block text-base sm:text-xl">
+                {designation}
+              </span>
+            )}
+            {location && (
+              <span className="designation relative mb-[2px] block text-base sm:text-xl italic text-slate-500">
+                {location}
+              </span>
+            )}
+            {platform && (
+              <span className="designation relative mb-[2px] block text-base sm:text-xl">
+                {platform}
+              </span>
+            )}
           </div>
         </div>
       </div>
