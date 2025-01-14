@@ -8,9 +8,9 @@ const {
   txtStyle,
   maskColor,
   customID,
-  newTab,
+  newTab = false,
 } = Astro.props;
-const BeforeStyle = `before:object-fit before:content-[''] before:h-full before:w-0 ${maskColor ? maskColor : "before:bg-[#21563D]"} before:bg-[#21563D] before:absolute before:inset-0 before:opacity-60 hover:before:w-full before:transform-all before:z-[0]`;
+const BeforeStyle = `before:object-fit before:content-[''] before:h-full before:w-0 ${maskColor ? maskColor : "before:bg-primaryHoverC"} before:bg-[#21563D] before:absolute before:inset-0 before:opacity-60 hover:before:w-full before:transform-all before:z-[0]`;
 ---
 
 <button

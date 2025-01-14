@@ -24,3 +24,76 @@
   animation: slide 60s linear infinite;
   -webkit-animation: slide 60s linear infinite;
 }
+
+#MobileWhiteDiv {
+  transform: rotateZ(360px);
+  animation: MobileReveal 1000ms forwards;
+  -webkit-animation: MobileReveal 1000ms forwards;
+}
+
+/*home page hero section */
+/*keyframes for grass */
+@keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1920px 0;
+  }
+}
+
+@-webkit-keyframes slide {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1920px 0;
+  }
+}
+
+#HeroSection {
+  /* animation: HeroSectionReveal 1500ms linear; */
+}
+
+@keyframes HeroSectionReveal {
+  from {
+    max-height: 0vh;
+  }
+  to {
+    max-height: 85vh;
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    transform: translateX(-1000px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@keyframes MobileReveal {
+  from {
+    max-height: 100%;
+  }
+  to {
+    max-height: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  #HeroSection {
+    animation: none;
+  }
+
+  #HeroBackdrop {
+    background: linear-gradient(to left, transparent 20%, rgb(0, 0, 0) 60%);
+    opacity: 0.7;
+    animation: gradientAnimation 1500ms forwards;
+  }
+
+  .pattern-layer {
+    transform: translateY(0px);
+  }
+}

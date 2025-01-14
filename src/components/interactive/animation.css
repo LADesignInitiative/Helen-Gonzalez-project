@@ -79,3 +79,9 @@
   opacity: 0;
   transform: scale3d(0, 0, 0);
 }
+
+.childrenFadeInFromBottomTag > * {
+  transition:
+    opacity 500ms ease,
+    transform 500ms ease;
+}

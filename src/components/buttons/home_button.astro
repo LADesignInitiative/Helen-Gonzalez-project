@@ -1,11 +1,16 @@
 ---
-const { customStyle } = Astro.props; 
+const { customStyle } = Astro.props;
 ---
+
 <div
-    class = {`btn-primary ${customStyle}`}
-    id="HomeButton"
->Go Home</div>
+  class={`bg-primaryC hover:bg-primaryHoverC rounded-lg text-white flex font-bold w-fit px-5 py-1 cursor-pointer ${customStyle}}`}
+  id="HomeButton"
+>
+  Go Home
+</div>
 <script>
-    const button = document.getElementById("HomeButton")
-    button?.addEventListener("mousedown", ()=>{window.location.href = "/"})
+  const button = document.getElementById("HomeButton");
+  button?.addEventListener("mousedown", () => {
+    window.location.href = "/";
+  });
 </script>

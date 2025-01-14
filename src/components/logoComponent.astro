@@ -1,19 +1,24 @@
 ---
-import Logo216 from "@/assets/logo/logo-white.png";
+import Logo216 from "@/assets/logo/logo-dark.svg";
 import { BusinessInfo } from "@/data/business-info.js";
-const { customDiv, width = 150 } = Astro.props;
+const { customDiv, width = 150, height = "auto" } = Astro.props;
 ---
 
 <div
-  class={`${customDiv ? customDiv : "justify-center flex cursor-pointer select-none py-1"}`}
+  class={`${customDiv ? customDiv : "justify-center flex cursor-pointer select-none py-1 my-auto"}`}
 >
-  <a href="/" aria-label="Home" class="w-inline-block max-w-full inline-block">
+  <a
+    href="/"
+    aria-label="Home"
+    class="w-inline-block max-w-full inline-block my-auto"
+  >
     <img
       src={Logo216.src}
       loading="eager"
       decoding="async"
-      class="aspect-[2/1]"
+      class="adspect-[2/1] my-auto"
       width={width}
+      height={height}
       alt={`${BusinessInfo.companyName} logo`}
       aria-label={`${BusinessInfo.companyName} logo`}
     />

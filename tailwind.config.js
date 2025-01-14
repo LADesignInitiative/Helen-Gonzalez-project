@@ -16,9 +16,9 @@ export default {
         heroBG: "url(`/assets/images/hero-background-desk.webp`)",
       },
       colors: {
-        primaryC: "#526E48",
-        primaryHoverC: "#62825D",
-        secondaryC: "#9EDF9C",
+        primaryC: "#048fd4",
+        primaryHoverC: "#67cafb",
+        secondaryC: "#82b02a",
         darkBlack: "#161d27",
       },
     },

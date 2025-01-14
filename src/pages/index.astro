@@ -4,19 +4,21 @@ import HeroSection from "@/components/hero-section/index.astro";
 import CTA from "@/components/contact-form/CTA.astro";
 import TestimonialSection from "@/components/Testimonial/index.astro";
 import { testimonials } from "@/data/testimonials.ts";
+import WhySection from "@/components/home-components/why-install-artificial-turf.astro";
+import WhyWorkWithUsSection from "@/components/home-components/why-work-with-us.astro";
+import FlowSection from "@/components/home-components/flow.astro";
+import ProjectSection from "@/components/home-components/featured-projects.astro";
+import CTASection from "@/components/home-components/CTA-section.astro";
 ---
 
 <StandardNavBar>
   <HeroSection />
+  <WhySection />
+  <FlowSection />
+  <WhyWorkWithUsSection />
+  <ProjectSection />
   <TestimonialSection testimonials={testimonials} />
-  <CTA
-    title="Let's discuss your project!"
-    ,
-    subtitle="Every project begins with a hello."
-    ,
-    BTNLabel="Send"
-    ,
-  />
+  <CTASection />
 </StandardNavBar>
 <script is:inline>
   document.addEventListener("astro:page-load", () => {
@@ -32,6 +34,11 @@ import { testimonials } from "@/data/testimonials.ts";
           }
           if (entry.target.classList.contains("sinkTag")) {
             entry.target.classList.remove("sink");
+          }
+          if (entry.target.classList.contains("childrenFadeInFromBottomTag")) {
+            for (let i = 0; i < entry.target.children.length; i++) {
+              entry.target.children[i].classList.remove("floatUp");
+            }
           }
         } else {
           if (entry.target.classList.contains("fallingTag")) {
@@ -70,6 +77,13 @@ import { testimonials } from "@/data/testimonials.ts";
     const SinkTag = document.getElementsByClassName("sinkTag");
     for (var i = 0; i < SinkTag.length; i++) {
       observer.observe(SinkTag[i]);
+    }
+
+    const ChildrenFadeInFromBottomTag = document.getElementsByClassName(
+      "childrenFadeInFromBottomTag",
+    );
+    for (var i = 0; i < ChildrenFadeInFromBottomTag.length; i++) {
+      observer.observe(ChildrenFadeInFromBottomTag[i]);
     }
   });
 </script>

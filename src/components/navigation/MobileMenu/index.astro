@@ -4,6 +4,7 @@ import MenuLinks from "./menuLinks.tsx";
 import { BusinessInfo } from "@/data/business-info.js";
 import { formatPhoneNumber } from "@/hooks/number_hooks";
 import LogoComponentLazy from "@/components/logoComponent-lazy.astro";
+import Logo from "@/assets/logo/logo-white-vertical.svg";
 import tree from "@/assets/images/tree-silhouette3-white-200.webp";
 ---
 
@@ -13,7 +14,26 @@ import tree from "@/assets/images/tree-silhouette3-white-200.webp";
 >
   <div id="close-btn" class="h-fit"><i class="fas fa-times close-btn"></i></div>
   <nav class="relative">
-    <LogoComponentLazy />
+    <!-- Logo -->
+
+    <div class="justify-center flex cursor-pointer select-none py-1">
+      <a
+        href="/"
+        aria-current="page"
+        class="justify-center flex max-w-full w--current"
+      >
+        <img
+          src={Logo.src}
+          loading="lazy"
+          decoding="async"
+          class="aspect-[2/1]"
+          width={150}
+          alt={`${BusinessInfo.companyName} logo`}
+          aria-label={`${BusinessInfo.companyName} logo`}
+        />
+      </a>
+    </div>
+
     <div class="menu-outer mt-[25px]">
       <MenuLinks client:only="react" />
     </div>

@@ -8,7 +8,7 @@ const {
   canonicalUrl = null,
   ToBeIndexed = true,
 } = Astro.props;
-import { ViewTransitions } from "astro:transitions";
+import { ClientRouter } from "astro:transitions";
 import Footer from "@/components/footer/index.astro";
 import "@/style/style.css";
 ---
@@ -56,7 +56,7 @@ import "@/style/style.css";
       rel="shortcut icon"
       type="image/svg"
     />
-    <ViewTransitions />
+    <ClientRouter />
   </head>
 
   <body class="h-full relative" id="body">

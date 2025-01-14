@@ -1,0 +1,16 @@
+---
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import Logo from "@/components/logoComponent.astro";
+import HomeButton from "@/components/buttons/home_button.astro";
+---
+
+<StandardNavBar pageTitle="Message Sent">
+  <div class="my-10">
+    <Logo width="300px" />
+    <h1 class="text-center font-bold">Your message has been sent.</h1>
+    <p class="text-center font-bold">
+      We will contact you as soon as possible.
+    </p>
+    <HomeButton customStyle="text-center mx-auto my-10 flex" />
+  </div>
+</StandardNavBar>

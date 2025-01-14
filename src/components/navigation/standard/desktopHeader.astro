@@ -11,18 +11,21 @@ const { interactive } = Astro.props;
 
 <header
   id="desktop-header"
-  class=`grid text-white min-h-[50px] sm:min-h-[50px] relative z-[100] !fixed top-0 right-0 left-0 bg-[#62825D] border-b-[3px] border-b-[#ffffff] navStyle transition-all duration-500 ${interactive ? "transparentHeader" : "" }`
+  class=`grid text-white min-h-[50px] sm:min-h-[50px] relative z-[100] !fixed top-0 right-0 left-0 bg-white border-b-[3px] border-b-[#0289d0] navStyle transition-all duration-500 ${interactive ? "transparentHeader" : "" }`
 >
   <TopHeader />
-  <div class="w-10/12 my-auto mx-auto flex md:flex flex-row justify-between">
+  <div
+    class="w-full px-5 md:px-10 my-5 md:my-auto mx-auto flex md:flex flex-row justify-between"
+  >
     <LogoComponent
       customDiv="cursor-pointer my-1 select-none hidden md:block"
+      width={200}
     />
     <LogoComponent
       customDiv="cursor-pointer my-auto flex select-none block md:hidden"
-      width={80}
+      width={250}
     />
-    <nav class="hidden md:block !text-white my-auto">
+    <nav class="hidden md:block text-black my-auto">
       <div class="" id="navbarSupportedContent">
         <ul class="flex">
           {
