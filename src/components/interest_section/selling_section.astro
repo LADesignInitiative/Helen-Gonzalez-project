@@ -15,30 +15,30 @@ const {
 
 <div
   id="SellingPoints"
-  class="SellingPoints relative w-full p-[15px] flex mb-[60px]"
+  class="SellingPoints relative w-full p-[0px] flex my-auto justify-center h-fit"
 >
-  <div class="inner-content text-center relative w-full">
-    <div class="pattern-layer hidden sm:block" id="Graphic_patterns">
+  <div class="inner-content text-center relative w-full h-full">
+    <div
+      class="pattern-layer hidden md:block my-auto absolute h-full z-[0] inset-0"
+      id="Graphic_patterns"
+    >
       <div
-        class="pattern-1 bg-[#2e7753] absolute left-[50%] top-[50%] translate-x-[-50%] translate-y-[-50%] w-[210px] h-[210px] rounded-[50%] opacity-10"
+        class="pattern-1 bg-[#2e7753] w-[210px] h-[210px] rounded-[50%] opacity-10 absolute inset-0"
       >
       </div>
+      {
+        BGImg && (
+          <img
+            src={BGImg.src}
+            loading="lazy"
+            decoding="async"
+            class="w-[350px] aspect-square m-auto object-contain absolute inset-0"
+            alt="Koi Background"
+          />
+        )
+      }
       <div
-        class="w-full h-full absolute !opacity-100 left-[50%] right-[50%] translate-x-[-50%] top-[65%] translate-y-[-50%]"
-      >
-        {
-          BGImg && (
-            <img
-              src={BGImg.src}
-              loading="lazy"
-              decoding="async"
-              class="w-[350px] aspect-square m-auto object-cover"
-              alt="Koi Background"
-            />
-          )
-        }
-      </div>
-      <div
+        id="interest-pattern-2"
         class="pattern-2 absolute animated"
         data-wow-delay="00ms"
         data-wow-duration="1500ms"
@@ -46,6 +46,7 @@ const {
       >
       </div>
       <div
+        id="interest-pattern-3"
         class="pattern-3 absolute animated"
         data-wow-delay="00ms"
         data-wow-duration="1500ms"
@@ -53,8 +54,8 @@ const {
       >
       </div>
     </div>
-    <div class="items-center grid sm:grid-cols-2 gap-10 mx-[-15px]">
-      <div class="feature-block">
+    <div class="items-center grid sm:grid-cols-2 gap-x-10 px-5 !z-[10] h-full">
+      <div class="">
         <SellingItem label={SellingPoint1} icon={icon1} index={1} delay="" />
         <SellingItem
           label={SellingPoint2}
@@ -63,7 +64,7 @@ const {
           delay="delay-[200ms]"
         />
       </div>
-      <div class="col-lg-6 col-md-6 col-sm-12 feature-block">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <SellingItem
           label={SellingPoint3}
           icon={icon3}

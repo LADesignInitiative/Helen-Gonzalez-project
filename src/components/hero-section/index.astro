@@ -1,12 +1,9 @@
 ---
 /*This slider is only for the homepage */
-import Slider from "../imageSlider/slider.tsx";
-import TitleSection from "../TitleComponent/index.astro";
 import Slide1 from "@/assets/slides/hero/slide-1.webp";
 import Slide2 from "@/assets/slides/hero/slide-2.webp";
 import Slide3 from "@/assets/slides/hero/slide-3.webp";
 import Grass from "@/assets/images/shape/shape-2.png";
-import LiquidButton from "@/components/buttons/liquid-button/index.astro";
 import ArrowButton from "@/components/buttons/arrow-button.astro";
 var HeroImages: Array<ImageMetadata> = [];
 try {
@@ -20,7 +17,7 @@ try {
 
 <section
   id="HeroSection"
-  class="relative flex text-center block bg-cover bg-no-repeat bg-center overflow-hidden h-[60vh] md:h-[85vh] w-full scrollToTopIndicator bg-[url('/assets/images/girl-grass.webp')] translate-y-[15px] sm:translate-y-[0px]"
+  class="relative flex text-center block bg-cover bg-no-repeat bg-center overflow-hidden h-[60vh] md:h-[85vh] w-full scrollToTopIndicator bg-[url('https://media.istockphoto.com/id/1256614861/photo/a-beautiful-artificial-lawn-in-the-front-yard-with-nice-flowers-and-shrubs-surrounding-it.webp?s=1024x1024&w=is&k=20&c=iRPzEcj6blmaXYeGzTAR3Dv6QxUM-LG-1xWDDmUEMro=')] translate-y-[15px] sm:translate-y-[0px]"
 >
   <div
     id="HeroBackdrop"

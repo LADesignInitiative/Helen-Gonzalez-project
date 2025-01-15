@@ -1,9 +1,13 @@
 ---
-
+import InterestSection from "@/components/interest_section/index.astro";
+import Puddles from "@/assets/icons/flow-interest/puddles-white.webp";
+import Mosquito from "@/assets/icons/flow-interest/mosquito-white.webp";
+import Heat from "@/assets/icons/flow-interest/hot-white.webp";
+import BGImg from "@/assets/images/tree-2.webp";
 ---
 
-<section class="[&>h3]:font-bold [&>h3]:mb-5 px-5 my-10 relative">
-  <div class="flex flex-col md:flex-row">
+<section class="[&>h3]:font-bold [&>h3]:mb-5 relative">
+  <div class="flex flex-col">
     <div class="justify-center flex flex-col">
       <h2 class="text-3xl md:text-4xl font-bold mb-5 text-center">
         Introducing Flow
@@ -23,37 +27,48 @@
       />
     </div>
   </div>
-  <div class="[&>p]:mb-5 md:w-6/12 md:mx-auto">
-    <p>
-      Many inferior artificial turf products that exist in the market are
-      susceptible to forming puddles after a rainy weather. Not resolving the
-      problem right away will eventually lead to a mosquito infestation. These
-      stagnant water pools create a perfect breeding ground for mosquitoes,
-      which can pose health risks.<br />
-    </p>
-    <p>
-      Tackling this issue requires regular maintenance checks to identify areas
-      where water tends to accumulate or installing a drainage system beneath
-      the system.
-    </p>
-    <p>
-      However, our artificial grass product Flow avoids this requirement and
-      resolves the issue of puddles.
-    </p>
-    <p>
-      This new turf technology has more porous holes that allows water to be
-      absorbed better. Thus, you can say goodbye to stagnant puddles of water
-      and mosquitoes.
-    </p>
-    <p>
-      It is also cleaner than regular artificial turf because any unwanted
-      material, such as dog urine, washes off easier.
-    </p>
-    <p>
-      Flow is also retains less heat, compared to regular fake grass, which has
-      difficulty in cooling itself naturally especially in hot summers.
-    </p>
-  </div>
+  <InterestSection
+    SellingPoint1="No puddles"
+    SellingPoint2="Prevents mosquito infestations "
+    SellingPoint3="Less trapped heat"
+    ,
+    icon1={Puddles}
+    icon2={Mosquito}
+    icon3={Heat}
+    {BGImg}
+  >
+    <div class="[&>p]:mb-5">
+      <p>
+        Many inferior artificial turf products that exist in the market are
+        susceptible to forming puddles after a rainy weather. Not resolving the
+        problem right away will eventually lead to a mosquito infestation. These
+        stagnant water pools create a perfect breeding ground for mosquitoes,
+        which can pose health risks.<br />
+      </p>
+      <p>
+        Tackling this issue requires regular maintenance checks to identify
+        areas where water tends to accumulate or installing a drainage system
+        beneath the system.
+      </p>
+      <p>
+        However, our artificial grass product Flow avoids this requirement and
+        resolves the issue of puddles.
+      </p>
+      <p>
+        This new turf technology has more porous holes that allows water to be
+        absorbed better. Thus, you can say goodbye to stagnant puddles of water
+        and mosquitoes.
+      </p>
+      <p>
+        It is also cleaner than regular artificial turf because any unwanted
+        material, such as dog urine, washes off easier.
+      </p>
+      <p>
+        Flow is also retains less heat, compared to regular fake grass, which
+        has difficulty in cooling itself naturally especially in hot summers.
+      </p>
+    </div>
+  </InterestSection>
   <div class="absolute bottom-0 left-0 right-0 w-full z-[-1]">
     <svg
       width="100%"
@@ -104,6 +119,9 @@
         class="transition-all duration-300 ease-in-out delay-150 path-1"
       ></path></svg
     >
-    <div class="bg-[#f0f0f0] w-full mb-0 mt-auto h-[900px] sm:h-[650px]"></div>
+    <div
+      class="bg-[#f0f0f0] w-full mb-0 mt-auto h-[2100px] [@media(min-width:400px)]:h-[1800px] [@media(min-width:646px)]:h-[1550px] [@media(min-width:768px)]:h-[950px]"
+    >
+    </div>
   </div>
 </section>

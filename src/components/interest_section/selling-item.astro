@@ -1,17 +1,17 @@
 ---
-import WhiteLightBulb from "@/assets/icons/lightbulb-white.webp";
-const { icon, label, index, customDiv, delay } = Astro.props;
+const { icon, label, index, delay } = Astro.props;
 ---
 
 <div
   id={`selling-item-${index}`}
-  class={`feature-block-one wow min-height-[30px] transition-all fadeOutDown SellExperience ${delay} cursor-pointer`}
+  class={`feature-block-one wow min-height-[30px] transition-all fadeOutDown SellExperience ${delay}`}
 >
   <div
     class="text-5xl mb-8 z-10 shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:shadow-[0_0_40px_rgb(0,0,0,20%)] relative mb-[30px] block rounded-[5px] bg-white px-[15px] pb-[60px] pt-[70px] transition-all"
   >
     <div
-      class="relative inline-block rounded-lg transition duration-300 [&>p]:absolute overflow-hidden w-[70px] bg-[#eaf1ee] aspect-square relative m-auto flex justify-center rounded-lg text-5xl mb-8 z-10 transition duration-300 before:absolute before:content-[''] before-w-full before:h-full before:bg-primaryC before:inset-0 before:z-[-1] before:transition-[scale_ease] before:duration-500 before:scale-0 hover:before:scale-100"
+      id={`selling-item-insignia-${index}`}
+      class="relative inline-block rounded-lg transition duration-300 [&>p]:absolute overflow-hidden w-[70px] bg-slate-800 aspect-square relative m-auto flex justify-center rounded-lg text-5xl mb-8 z-10 transition duration-300 before:absolute before:content-[''] before-w-full before:h-full before:bg-secondaryC before:inset-0 before:z-[-1] before:transition-[scale_ease] before:duration-500 before:scale-0 hover:before:scale-100"
     >
       <img src={icon.src} class="w-[50px] aspect-square m-auto" alt={label} />
     </div>

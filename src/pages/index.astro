@@ -27,6 +27,12 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     const Bg2 = document.getElementById("background2");
     const Bg3 = document.getElementById("background3");
     const Bg4 = document.getElementById("background4");
+
+    /** Interest Section */
+    const GraphicPatterns = document.getElementById("Graphic_patterns");
+    const PatternTwo = document.getElementById("interest-pattern-2");
+    const PatternThree = document.getElementById("interest-pattern-3");
+
     const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -61,6 +67,18 @@ import CTASection from "@/components/home-components/CTA-section.astro";
             entry.target.classList.remove("RotateInTag");
             Bg4.classList.remove("!max-h-0");
           }
+          /*interest section*/
+          if (entry.target.id === "Graphic_patterns") {
+            if (!PatternTwo?.classList.contains("slideInRight")) {
+              PatternTwo?.classList.add("slideInRight");
+            }
+            if (!PatternThree?.classList.contains("slideInLeft")) {
+              PatternThree?.classList.add("slideInLeft");
+            }
+          }
+          if (entry.target.classList.contains("SellExperience")) {
+            entry.target.classList.remove("fadeOutDown");
+          }
         } else {
           if (entry.target.classList.contains("fallingTag")) {
             entry.target.classList.add("startingFallingAnim");
@@ -86,6 +104,12 @@ import CTASection from "@/components/home-components/CTA-section.astro";
           }
           if (entry.target.id === "durability") {
             Bg3.classList.add("!max-h-0");
+          }
+          /*interest section*/
+          if (entry.target.classList.contains("SellExperience")) {
+            if (!entry.target.classList.contains("fadeOutDown")) {
+              entry.target.classList.add("fadeOutDown");
+            }
           }
         }
       });
@@ -127,5 +151,13 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     observer.observe(Conservation);
     observer.observe(Durability);
     observer.observe(Safety);
+
+    /*interest section */
+    observer.observe(GraphicPatterns);
+
+    const SellExperience = document.getElementsByClassName("SellExperience");
+    for (let i = 0; i < SellExperience.length; i++) {
+      observer.observe(SellExperience[i]);
+    }
   });
 </script>

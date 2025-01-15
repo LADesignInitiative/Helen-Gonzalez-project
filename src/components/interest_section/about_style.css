@@ -1,9 +1,3 @@
-@tailwind base;
-
-@tailwind components;
-
-@tailwind utilities;
-
 .inner-box {
   animation-duration: 5s;
 }
@@ -16,8 +10,7 @@
 
 .fadeOutDown {
   transform: translateY(20px);
-  /* -webkit-transform: translateY(20px);
-    -ms-transform: translateY(20px); */
+
   opacity: 0;
 }
 
@@ -27,10 +20,6 @@
   transition:
     opacity 1s,
     transform 1s;
-  /* opacity: 1.0; 
-    transform: translateY(0px); 
-    -webkit-transform: translateY(0px);
-    -ms-transform: translateY(0px); */
 }
 
 .animated {
@@ -51,7 +40,7 @@
 
 .SellingPoints .inner-content .pattern-layer .pattern-2 {
   left: -125px;
-  bottom: 30px;
+  bottom: 250px;
   width: 204px;
   height: 284px;
   background-repeat: no-repeat;
