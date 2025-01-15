@@ -1,7 +1,6 @@
 ---
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import HeroSection from "@/components/hero-section/index.astro";
-import CTA from "@/components/contact-form/CTA.astro";
 import TestimonialSection from "@/components/Testimonial/index.astro";
 import { testimonials } from "@/data/testimonials.ts";
 import WhySection from "@/components/home-components/why-install-artificial-turf.astro";
@@ -27,6 +26,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     const Bg1 = document.getElementById("background1");
     const Bg2 = document.getElementById("background2");
     const Bg3 = document.getElementById("background3");
+    const Bg4 = document.getElementById("background4");
     const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -44,9 +44,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
               entry.target.children[i].classList.remove("floatUp");
             }
           }
-          // if (entry.target.classList.contains("RotateInTag")) {
-          //   entry.target.classList.remove("RotateInTag");
-          // }
+
           if (entry.target.id === "lower-cost") {
             entry.target.classList.remove("RotateInTag");
             Bg1.classList.remove("!max-h-0");
@@ -61,6 +59,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
           }
           if (entry.target.id === "safety") {
             entry.target.classList.remove("RotateInTag");
+            Bg4.classList.remove("!max-h-0");
           }
         } else {
           if (entry.target.classList.contains("fallingTag")) {
