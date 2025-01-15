@@ -8,7 +8,7 @@ const { interactive } = Astro.props;
 <!-- Fav Icon -->
 <div
   id="backdrop"
-  class="fixed left-0 top-0 w-full h-full bg-secondaryC transition-all duration-[900ms] opacity-0 invisible"
+  class="fixed z-[199] left-0 top-0 right-0 bottom-0 w-full h-full bg-secondaryC transition-all duration-[900ms] opacity-70 !opacity-0 invisible"
 >
 </div>
 <DesktopHeader interactive={interactive} />
@@ -23,17 +23,20 @@ const { interactive } = Astro.props;
     const OpenMenu = () => {
       if (MobileMenu?.classList.contains("mobile-menu-close")) {
         MobileMenu?.classList.remove("mobile-menu-close");
-        Backdrop?.classList.add("backdrop-visible");
+        Backdrop?.classList.remove("!opacity-0");
+        Backdrop?.classList.remove("invisible");
       } else {
         MobileMenu?.classList.add("mobile-menu-close");
-        Backdrop?.classList.remove("backdrop-visible");
+        Backdrop?.classList.add("!opacity-0");
+        Backdrop?.classList.add("invisible");
       }
     };
 
     const CloseMenu = () => {
       if (!MobileMenu?.classList.contains("mobile-menu-close")) {
         MobileMenu?.classList.add("mobile-menu-close");
-        Backdrop?.classList.remove("backdrop-visible");
+        Backdrop?.classList.add("!opacity-0");
+        Backdrop?.classList.add("invisible");
       }
     };
     const CheckIfClickedOutside = (event) => {
@@ -43,7 +46,8 @@ const { interactive } = Astro.props;
         !MobileMenu?.contains(event.target)
       ) {
         MobileMenu?.classList.add("mobile-menu-close");
-        Backdrop?.classList.remove("backdrop-visible");
+        Backdrop?.classList.add("!opacity-0");
+        Backdrop?.classList.add("invisible");
       }
     };
     MobileToggler?.addEventListener("mousedown", OpenMenu);

@@ -23,6 +23,10 @@ import CTASection from "@/components/home-components/CTA-section.astro";
 <script is:inline>
   document.addEventListener("astro:page-load", () => {
     /* for the animations throughout the webpage*/
+
+    const Bg1 = document.getElementById("background1");
+    const Bg2 = document.getElementById("background2");
+    const Bg3 = document.getElementById("background3");
     const callback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -40,6 +44,24 @@ import CTASection from "@/components/home-components/CTA-section.astro";
               entry.target.children[i].classList.remove("floatUp");
             }
           }
+          // if (entry.target.classList.contains("RotateInTag")) {
+          //   entry.target.classList.remove("RotateInTag");
+          // }
+          if (entry.target.id === "lower-cost") {
+            entry.target.classList.remove("RotateInTag");
+            Bg1.classList.remove("!max-h-0");
+          }
+          if (entry.target.id === "conservation") {
+            entry.target.classList.remove("RotateInTag");
+            Bg2.classList.remove("!max-h-0");
+          }
+          if (entry.target.id === "durability") {
+            entry.target.classList.remove("RotateInTag");
+            Bg3.classList.remove("!max-h-0");
+          }
+          if (entry.target.id === "safety") {
+            entry.target.classList.remove("RotateInTag");
+          }
         } else {
           if (entry.target.classList.contains("fallingTag")) {
             entry.target.classList.add("startingFallingAnim");
@@ -56,6 +78,15 @@ import CTASection from "@/components/home-components/CTA-section.astro";
             !entry.target.classList.contains("sink")
           ) {
             entry.target.classList.add("sink");
+          }
+          if (entry.target.id === "lower-cost") {
+            Bg1.classList.add("!max-h-0");
+          }
+          if (entry.target.id === "conservation") {
+            Bg2.classList.add("!max-h-0");
+          }
+          if (entry.target.id === "durability") {
+            Bg3.classList.add("!max-h-0");
           }
         }
       });
@@ -85,5 +116,17 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     for (var i = 0; i < ChildrenFadeInFromBottomTag.length; i++) {
       observer.observe(ChildrenFadeInFromBottomTag[i]);
     }
+    // const RotateInTag = document.getElementsByClassName("RotateInTag");
+    // for (var i = 0; i < RotateInTag.length; i++) {
+    //   observer.observe(RotateInTag[i]);
+    // }
+    const LowerCost = document.getElementById("lower-cost");
+    const Conservation = document.getElementById("conservation");
+    const Durability = document.getElementById("durability");
+    const Safety = document.getElementById("safety");
+    observer.observe(LowerCost);
+    observer.observe(Conservation);
+    observer.observe(Durability);
+    observer.observe(Safety);
   });
 </script>
