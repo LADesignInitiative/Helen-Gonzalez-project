@@ -1,0 +1,18 @@
+---
+const { img, url, title, customStyle, imgStyle } = Astro.props;
+---
+
+<div class={`w-full relative overflow-hidden group rounded-lg ${customStyle}`}>
+  <a
+    href={url}
+    class="cursor-pointer group before:'' before:opacity-0 before:absolute before:inset-0 before:w-full before:h-full group-hover:before:opacity-30 before:bg-black before:z-[2]"
+  >
+    <img
+      src={img}
+      alt={title}
+      class={`object-cover ${imgStyle} `}
+      loading="lazy"
+      decoding="async"
+    />
+  </a>
+</div>

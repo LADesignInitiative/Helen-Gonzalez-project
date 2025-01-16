@@ -1,0 +1,52 @@
+---
+import LatestData from "@/data/lastest-projects.js";
+import GridItem from "./grid-item.astro";
+---
+
+<section class="w-full my-10" id="latest_project_section">
+  <div
+    class="mx-auto max-w-[1263px] px-6 lg:px-8 grid grid-cols-1 gap-5 md:grid-cols-3 md:grid-rows-3"
+  >
+    <GridItem
+      {...LatestData[0]}
+      customStyle="order-first md:order-[2] floatUpTag floatUp"
+      imgStyle="w-[718px] md:w-[387px] h-[290px]"
+    />
+    <GridItem
+      {...LatestData[1]}
+      customStyle="floatUpTag floatUp"
+      imgStyle="w-[718px] md:w-[387px] h-[290px]"
+    />
+    <GridItem
+      {...LatestData[2]}
+      customStyle="floatUpTag floatUp"
+      imgStyle="w-[718px] md:w-[387px] h-[290px]"
+    />
+    <GridItem
+      {...LatestData[3]}
+      customStyle="floatUpTag floatUp"
+      imgStyle="w-[718px] md:w-[387px] h-[290px]"
+    />
+    <GridItem
+      {...LatestData[4]}
+      customStyle="md:row-span-2 floatUpTag floatUp"
+      imgStyle="absolute inset-0 w-auto md:h-[599px]"
+    />
+    <GridItem
+      {...LatestData[5]}
+      customStyle="floatUpTag floatUp"
+      imgStyle="w-[718px] md:w-[387px] h-[290px]"
+    />
+
+    <GridItem
+      {...LatestData[6]}
+      customStyle="hidden sm:block order-last md:order-first md:col-span-2 overflow-hidden floatUpTag floatUp"
+      imgStyle="md:w-[792px] h-[290px]"
+    />
+    <GridItem
+      {...LatestData[7]}
+      customStyle="block sm:hidden order-last md:order-first md:col-span-2 overflow-hidden floatUpTag floatUp"
+      imgStyle="md:w-[792px] h-[290px]"
+    />
+  </div>
+</section>

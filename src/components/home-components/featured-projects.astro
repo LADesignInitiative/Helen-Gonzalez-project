@@ -1,16 +1,24 @@
 ---
-
+import BentoGrid from "@/components/latest-project-preview/index.astro";
 ---
 
-<section>
-  <h2>Our Featured Projects</h2>
+<section class="px-5 bg-white z-[20] block relative">
+  <h3 class="uppercase text-slate-500 text-lg text-center md:text-left">
+    Loved by the community
+  </h3>
+  <h2
+    class="text-2xl md:text-4xl text-center md:text-left font-bold mb-5 text-black"
+  >
+    Our Featured <span class="text-primaryC">Projects</span>
+  </h2>
   <p>
     Hark Rock Landscaping takes pride in showcasing our portfolio of <strong
-      >artificial grass installations</strong
+      class="text-secondaryC">artificial grass installations</strong
     > that have transformed various residential and commercial spaces across Los
     Angeles. From backyards to playgrounds, our experienced artificial grass installers
     are dedicated to delivering high-quality results that meet the unique needs of
     each client. We utilize top-of-the-line materials, including Flow, to create
     visually appealing and functional outdoor spaces.
   </p>
+  <BentoGrid />
 </section>

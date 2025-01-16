@@ -1,55 +1,95 @@
 ---
-
+import affordable from "@/assets/images/why-work-w-us/affordable.webp";
+import cement from "@/assets/images/why-work-w-us/cement.webp";
+import design from "@/assets/images/why-work-w-us/design.webp";
+import Flexibility from "@/assets/images/why-work-w-us/flexibility.webp";
+import guaranteed from "@/assets/images/why-work-w-us/guaranteed.webp";
+import resourceful from "@/assets/images/why-work-w-us/resourceful.webp";
+import Panel from "./why-panel.astro";
+import Helen from "@/assets/images/helen.webp";
 ---
 
-<section class="relative">
+<div class="bg-white">
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 1440 320"
-    class="absolute top-[-100px] left-0 right-0 w-full z-[-1]"
+    class="w-full z-[0]"
     ><path
       fill="#f0f0f0"
       fill-opacity="1"
       d="M0,160L720,320L1440,128L1440,0L720,0L0,0Z"></path></svg
   >
-  <div class="px-5">
-    <h2 class="text-2xl md:text-3xl font-bold mb-5">
-      Why work with us rather than other artificial turf installers in Los
-      Angeles?
-    </h2>
-    <h3>Flexibility</h3>
-    <p>
-      If you have any last minute changes even if a project has already started,
-      we will adjust our procedures to make them happen.
-    </p>
-    <h3>Resourcefulness</h3>
-    <p>
-      If you require a specific material that is hard to find, we will
-      demonstrate our resourcefulness.
-    </p>
-    <h3>Affordability</h3>
-    <p>If your budget is tight, we can negotiate ways to maneuver around it.</p>
-    <h3>Landscape design expertise</h3>
-    <p>
-      We want to share our passion for landscape design with our community,
-      which can benefit from our knowledge and years of experience in artificial
-      turf installation.
-    </p>
-    <p>
-      In every project, it is our mission to help clients achieve what they
-      envisioned their yards to look like.
-    </p>
-    <h3>Pavers and cement work</h3>
-    <p>
-      We also include installing pavers and cement work when installing
-      synthetic grass. This helps to take our designs to the next level.
-    </p>
-    <h3>Securing your investment</h3>
-    <p>
-      We offer a very generous policy. To elaborate, your artificial turf will
-      have a 15 year warranty with the manufacturer and 1 year turf installation
-      warranty with us. This means that if the product has a defect, it will be
-      replaced.
-    </p>
+</div>
+<section class="relative overflow-visible md:h-full bg-white">
+  <div
+    class="px-5 py-20 flex flex-col md:flex-rofw md:grid md:grid-cols-2 md:gap-5"
+  >
+    <div
+      class="min-w-[40%] mb-10 md:mb-0 md:sticky md:top-[150px] md:h-fit md:w-fit block"
+    >
+      <h3 class="uppercase text-slate-500 text-lg text-center md:text-left">
+        About us
+      </h3>
+      <h2
+        class="text-2xl md:text-4xl text-center md:text-left font-bold mb-5 text-black"
+      >
+        Why make us different than other <span class="text-primaryC"
+          >artificial turf installers in Los Angeles?</span
+        >
+      </h2>
+      <div
+        class="w-[320px] h-[320px] sm:w-[350px] sm:h-[350px] rounded-full mx-auto overflow-hidden"
+      >
+        <img
+          src={Helen.src}
+          alt="owner of hard rock landscaping"
+          class="w-[350px] aspect-[3/4]"
+        />
+      </div>
+    </div>
+    <div
+      class="[&>div]:rounded-lg [&>div]:bg-white [&>div]:shadow-[rgba(100,100,111,0.2)_0px_7px_29px_0px] [&>div]:p-5 [&>div]:mb-5 md:[&>div]:mb-0 md:grid gap-5 z-[1]"
+    >
+      <Panel image={Flexibility} label="Flexibility">
+        <p>
+          If you have any last minute changes even if a project has already
+          started, we will adjust our procedures to make them happen.
+        </p>
+      </Panel>
+      <Panel image={resourceful} label="Resourcefulness">
+        <p>
+          If you have any last minute changes even if a project has already
+          started, we will adjust our procedures to make them happen.
+        </p>
+      </Panel>
+
+      <Panel image={affordable} label="Affordability">
+        <p>
+          If you have any last minute changes even if a project has already
+          started, we will adjust our procedures to make them happen.
+        </p>
+      </Panel>
+
+      <Panel image={design} label="Landscape design expertise">
+        <p>
+          If you have any last minute changes even if a project has already
+          started, we will adjust our procedures to make them happen.
+        </p>
+      </Panel>
+
+      <Panel image={cement} label="Pavers and cement work">
+        <p>
+          If you have any last minute changes even if a project has already
+          started, we will adjust our procedures to make them happen.
+        </p>
+      </Panel>
+
+      <Panel image={guaranteed} label="Securing your investment">
+        <p>
+          If you have any last minute changes even if a project has already
+          started, we will adjust our procedures to make them happen.
+        </p>
+      </Panel>
+    </div>
   </div>
 </section>
