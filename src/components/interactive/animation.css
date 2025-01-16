@@ -85,3 +85,13 @@
     opacity 500ms ease,
     transform 500ms ease;
 }
+
+.rotateContainer {
+  transform-style: preserve-3d;
+  perspective: 100px;
+}
+
+.rotateOut {
+  transform: rotateX(90deg);
+  transform-origin: center bottom;
+}
