@@ -95,3 +95,13 @@
   transform: rotateX(90deg);
   transform-origin: center bottom;
 }
+
+.slideLeft {
+  transform: translateX(-300px);
+  opacity: 0;
+}
+
+.slideRight {
+  transform: translateX(300px);
+  opacity: 0;
+}

@@ -10,13 +10,18 @@ import ProjectSection from "@/components/home-components/featured-projects.astro
 import CTASection from "@/components/home-components/CTA-section.astro";
 ---
 
-<StandardNavBar>
+<StandardNavBar
+  pageTitle="Say goodbye to grass maintenance with artificial turf installation"
+  customDescription="Transform your yard with artificial turf installation! Say goodbye to grass maintenance and enjoy bliss in every step on lush, low-care artificial grass."
+>
   <HeroSection />
   <WhySection />
   <FlowSection />
   <WhyWorkWithUsSection />
   <ProjectSection />
-  <TestimonialSection testimonials={testimonials} />
+  <div class="sticky top-0">
+    <TestimonialSection testimonials={testimonials} />
+  </div>
   <CTASection />
 </StandardNavBar>
 <script is:inline>
@@ -110,6 +115,15 @@ import CTASection from "@/components/home-components/CTA-section.astro";
             entry.target.classList.remove("fadeOutDown");
             SellItemInsignia3.classList.add("before:scale-100");
           }
+          if (entry.target.id === "CTA-left-plant") {
+            entry.target.children[0].classList.remove("slideLeft");
+          }
+          if (entry.target.id === "CTA-right-plant") {
+            entry.target.children[0].classList.remove("slideRight");
+          }
+          if (entry.target.id === "ClientCounter") {
+            entry.target.children[0].children[0].classList.remove("hidden");
+          }
         } else {
           if (entry.target.classList.contains("fallingTag")) {
             entry.target.classList.add("startingFallingAnim");
@@ -152,6 +166,20 @@ import CTASection from "@/components/home-components/CTA-section.astro";
             PatternTwo?.classList.remove("slideInRight");
             PatternThree?.classList.remove("slideInLeft");
           }
+          if (entry.target.id === "CTA-left-plant") {
+            if (!entry.target.children[0].classList.contains("slideLeft"))
+              entry.target.children[0].classList.add("slideLeft");
+          }
+          if (entry.target.id === "CTA-right-plant") {
+            if (!entry.target.children[0].classList.contains("slideRight"))
+              entry.target.children[0].classList.add("slideRight");
+          }
+          if (entry.target.id === "ClientCounter") {
+            if (
+              !entry.target.children[0].children[0].classList.contains("hidden")
+            )
+              entry.target.children[0].children[0].classList.add("hidden");
+          }
         }
       });
     };
@@ -180,10 +208,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     for (var i = 0; i < ChildrenFadeInFromBottomTag.length; i++) {
       observer.observe(ChildrenFadeInFromBottomTag[i]);
     }
-    // const RotateInTag = document.getElementsByClassName("RotateInTag");
-    // for (var i = 0; i < RotateInTag.length; i++) {
-    //   observer.observe(RotateInTag[i]);
-    // }
+
     const LowerCost = document.getElementById("lower-cost");
     const Conservation = document.getElementById("conservation");
     const Durability = document.getElementById("durability");
@@ -206,5 +231,14 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     for (let i = 0; i < SellExperience.length; i++) {
       observer.observe(SellExperience[i]);
     }
+
+    /*CTA section */
+    const CTALeftPlant = document.getElementById("CTA-left-plant");
+    const CTARightPlant = document.getElementById("CTA-right-plant");
+    observer.observe(CTALeftPlant);
+    observer.observe(CTARightPlant);
+
+    const ClientCounter = document.getElementById("ClientCounter");
+    observer.observe(ClientCounter);
   });
 </script>

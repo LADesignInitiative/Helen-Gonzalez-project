@@ -10,7 +10,7 @@ export const BusinessInfo = {
   phone: "2133327734",
   email: "hardrocklandca@gmail.com",
   website_name: "Hard Rock Landscaping",
-  websiteURL: "www.example.com",
+  websiteURL: "www.HardRockLandscapingCA.com",
   lastUpdated: "November 13, 2024",
   OpenGraphImg: {
     src: "",

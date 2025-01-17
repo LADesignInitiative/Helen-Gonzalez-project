@@ -1,0 +1,66 @@
+---
+export const prerender = true;
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import { getImageFileName } from "@/hooks/blogHooks.ts";
+import SocialMediaComponent from "@/components/socialMedia/share-buttons/index.astro";
+type PhotoObjType = {
+  src?: string;
+  width?: number;
+  height?: number;
+};
+
+interface ImageObject {
+  src: string;
+}
+export async function getStaticPaths() {
+  let AllPhotos: any = [];
+  let staticPaths: any = [];
+  try {
+    //AllPhotos = await Astro.glob("../../assets/project-photos/*");
+    AllPhotos = import.meta.glob("../../assets/project-photos/*.jpg", {
+      eager: true,
+    }) as any;
+
+    for (let i in AllPhotos) {
+      let fileName = getImageFileName(i);
+      var path: {
+        params: any;
+        props: { imageObj: { default: { src: any } }; title: string };
+      } = {
+        params: { photo: fileName },
+        props: {
+          imageObj: AllPhotos[i].default,
+          title: fileName,
+        },
+      };
+      staticPaths.push(path);
+    }
+    return staticPaths;
+  } catch (e) {
+    AllPhotos = {};
+    console.log("error in retrieving project photos:", e);
+  }
+}
+const { imageObj, title } = Astro.props;
+---
+
+<StandardNavBar
+  pageTitle="Project Photo"
+  OGImage={(imageObj as any).src as ImageObject}
+  canonicalUrl="/projects"
+>
+  <div class="w-11/12 h-auto mx-auto mt-[125px] mb-10 scrollToTopIndicator">
+    <img
+      src={(imageObj as any).src}
+      alt={title}
+      class="w-full h-auto object-cover"
+      decoding="async"
+    />
+    <SocialMediaComponent
+      title="Artificial turf installation project"
+      description="Photo of Hard Rock Landscaping project"
+    />
+  </div>
+</StandardNavBar>
+
+<script src="/script/default.js" is:inline></script>

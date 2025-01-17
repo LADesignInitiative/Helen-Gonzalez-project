@@ -1,0 +1,27 @@
+---
+import FacebookBtn from "./facebook.astro";
+import LinkedinBtn from "./linkedin.astro";
+import Twitter from "./twitter.astro";
+import Reddit from "./reddit.astro";
+import Telegram from "./telegram.astro";
+import Tumblr from "./tumblr.astro";
+import Whatsapp from "./whatsapp.astro";
+import Email from "./email.astro";
+const { title, description } = Astro.props;
+---
+
+<div class="my-10">
+  <div class="font-bold mb-5">
+    Share this with your friends on your social media:
+  </div>
+  <div class="flex mx-auto flex-row gap-x-5">
+    <FacebookBtn />
+    <LinkedinBtn />
+    <Twitter />
+    <Reddit {title} />
+    <Telegram />
+    <Tumblr {title} {description} />
+    <Whatsapp />
+    <Email {title} {description} />
+  </div>
+</div>

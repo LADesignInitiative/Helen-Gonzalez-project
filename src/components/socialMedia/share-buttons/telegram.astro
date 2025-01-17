@@ -1,0 +1,17 @@
+---
+import Icon from "./icons/telegram.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const currentPath = Astro.url.pathname;
+const websiteUrl = BusinessInfo.websiteURL;
+const ShareUrl = `https://t.me/share/url?url=${websiteUrl}${currentPath}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="Telegram Share Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

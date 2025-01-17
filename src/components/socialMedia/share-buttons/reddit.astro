@@ -1,0 +1,18 @@
+---
+import Icon from "./icons/reddit.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const currentPath = Astro.url.pathname;
+const websiteUrl = BusinessInfo.websiteURL;
+const { title } = Astro.props;
+const ShareUrl = `https://www.reddit.com/submit?url=${websiteUrl}${currentPath}&title=${title}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="Reddit Share Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

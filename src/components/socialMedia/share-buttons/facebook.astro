@@ -1,0 +1,18 @@
+---
+import FBIcon from "./icons/facebook-32.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const currentPath = Astro.url.pathname;
+const websiteUrl = BusinessInfo.websiteURL;
+const SocialUrl = "https://www.facebook.com/sharer/sharer.php?u=";
+const fbShareUrl = `${SocialUrl}${websiteUrl}${currentPath}`;
+---
+
+<a href={fbShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={FBIcon.src}
+    alt="Facebook Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

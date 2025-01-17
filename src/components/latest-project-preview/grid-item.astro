@@ -8,7 +8,7 @@ const { img, url, title, customStyle, imgStyle } = Astro.props;
     class="cursor-pointer group before:'' before:opacity-0 before:absolute before:inset-0 before:w-full before:h-full group-hover:before:opacity-30 before:bg-black before:z-[2]"
   >
     <img
-      src={img}
+      src={typeof img === "string" ? img : img.src}
       alt={title}
       class={`object-cover ${imgStyle} `}
       loading="lazy"

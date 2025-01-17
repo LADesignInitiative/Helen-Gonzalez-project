@@ -1,0 +1,18 @@
+---
+import Icon from "./icons/linkedin-blue-32.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const websiteUrl = BusinessInfo.websiteURL;
+const currentPath = Astro.url.pathname;
+const SocialUrl = "https://www.linkedin.com/sharing/share-offsite/?url=";
+const ShareUrl = `${SocialUrl}${websiteUrl}${currentPath}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="LinkedIn Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

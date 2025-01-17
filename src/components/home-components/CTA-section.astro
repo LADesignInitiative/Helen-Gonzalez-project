@@ -1,14 +1,40 @@
 ---
 import CTA from "@/components/contact-form/CTA.astro";
+import leftImg from "@/assets/images/shape/shape-11.png";
+import rightImg from "@/assets/images/shape/shape-12.png";
 ---
 
-<section class="bg-white block w-full py-10 px-5 relative">
-  <h2 class="text-center">
-    Are you ready to experience bliss in every step of your feet? Let's discuss
-    transforming your yard with artificial grass.
-  </h2>
+<section class="bg-white block w-full py-10 px-5 relative overflow-x-hidden">
+  <div id="CTA-left-plant" class="absolute left-0 top-0 z-[0] opacity-30">
+    <img
+      src={leftImg.src}
+      alt="left decoration"
+      decoding="async"
+      loading="lazy"
+      class="w-[250px] md:w-[300px] aspect-square object-cover transform-all duration-500 slideLeft"
+    />
+  </div>
+  <div id="CTA-right-plant" class="absolute right-0 top-0 z-[0] opacity-30">
+    <img
+      src={rightImg.src}
+      alt="right decoration"
+      decoding="async"
+      loading="lazy"
+      class="w-[250px] md:w-[300px] aspect-square object-cover transform-all duration-500 slideRight"
+    />
+  </div>
+  <div class="my-10 z-[3]">
+    <p class="text-center mx-auto text-2xl">
+      Are you ready to experience bliss in every step of your feet?
+    </p>
+    <h2 class="text-center">
+      Let's discuss transforming your yard with <strong class="text-secondaryC"
+        >artificial grass.</strong
+      >
+    </h2>
+  </div>
   <CTA
-    title="Let's discuss your project!"
+    title="Reach out to us"
     subtitle="Every project begins with a hello."
     BTNLabel="Send"
   />

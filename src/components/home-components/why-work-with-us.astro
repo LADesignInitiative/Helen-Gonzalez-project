@@ -7,6 +7,7 @@ import guaranteed from "@/assets/images/why-work-w-us/guaranteed.webp";
 import resourceful from "@/assets/images/why-work-w-us/resourceful.webp";
 import Panel from "./why-panel.astro";
 import Helen from "@/assets/images/helen.webp";
+import Counter from "../counter.jsx";
 ---
 
 <div class="bg-white">
@@ -33,7 +34,7 @@ import Helen from "@/assets/images/helen.webp";
       <h2
         class="text-2xl md:text-4xl text-center md:text-left font-bold mb-5 text-black"
       >
-        Why make us different than other <span class="text-primaryC"
+        What make us different than other <span class="text-primaryC"
           >artificial turf installers in Los Angeles?</span
         >
       </h2>
@@ -45,6 +46,9 @@ import Helen from "@/assets/images/helen.webp";
           alt="owner of hard rock landscaping"
           class="w-[350px] aspect-[3/4]"
         />
+      </div>
+      <div id="ClientCounter" class="min-h-[25px] min-w-[25px] mx-auto">
+        <Counter from={0} to={200} client:only="react" />
       </div>
     </div>
     <div
@@ -84,7 +88,7 @@ import Helen from "@/assets/images/helen.webp";
         </p>
       </Panel>
 
-      <Panel image={guaranteed} label="Securing your investment">
+      <Panel image={guaranteed} label="Secured investment">
         <p>
           If you have any last minute changes even if a project has already
           started, we will adjust our procedures to make them happen.

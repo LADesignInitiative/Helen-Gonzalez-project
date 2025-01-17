@@ -1,0 +1,25 @@
+---
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import { getImageFileName } from "@/hooks/blogHooks.ts";
+
+let AllPhotos: any = [];
+try {
+  AllPhotos = import.meta.glob("../../assets/project-photos/*");
+  //  console.log("AllPhotos: ", typeof AllPhotos);
+  // AllPhotos.forEach((item) => {
+  //   console.log(getImageFileName(item.default.src));
+  // });
+
+  for (let i in AllPhotos) {
+    console.log(i);
+  }
+} catch (e) {
+  AllPhotos = [];
+  console.log("error in retrieving project photos:", e);
+}
+---
+
+<StandardNavBar>
+  <div class="min-h-[90vh] w-full"></div>
+</StandardNavBar>
+<script src="/script/default.js" is:inline></script>

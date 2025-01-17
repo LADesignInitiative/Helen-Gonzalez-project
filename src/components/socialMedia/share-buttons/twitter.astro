@@ -1,0 +1,18 @@
+---
+import Icon from "./icons/X-logo.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const websiteUrl = BusinessInfo.websiteURL;
+const currentPath = Astro.url.pathname;
+const SocialUrl = "https://twitter.com/intent/tweet?text=";
+const ShareUrl = `${SocialUrl}${websiteUrl}${currentPath}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="X Share Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

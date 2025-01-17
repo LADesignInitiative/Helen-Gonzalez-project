@@ -1,0 +1,19 @@
+---
+import Icon from "./icons/mail-32.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const { title, description } = Astro.props;
+const currentPath = Astro.url.pathname;
+const websiteUrl = BusinessInfo.websiteURL;
+const postUrl = `${websiteUrl}${currentPath}`;
+const ShareUrl = `mailto:?subject=${title}&body=${description} ${postUrl}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="Email Share Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

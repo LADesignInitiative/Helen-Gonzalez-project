@@ -1,0 +1,18 @@
+---
+import Icon from "./icons/whatsapp-32.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const currentPath = Astro.url.pathname;
+const websiteUrl = BusinessInfo.websiteURL;
+const postUrl = `${websiteUrl}${currentPath}`;
+const ShareUrl = `https://api.whatsapp.com/send?text=${postUrl}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="WhatsApp Share Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>

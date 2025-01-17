@@ -1,0 +1,19 @@
+---
+import Icon from "./icons/tumblr-32.webp";
+import { BusinessInfo } from "@/data/business-info.js";
+const { title, description } = Astro.props;
+const websiteUrl = BusinessInfo.websiteURL;
+const currentPath = Astro.url.pathname;
+const postUrl = `${websiteUrl}${currentPath}`;
+const ShareUrl = `https://www.tumblr.com/widgets/share/tool?canonicalUrl=${postUrl}&title=${title}&caption=${description}`;
+---
+
+<a href={ShareUrl} target="_blank" rel="noopener noreferrer">
+  <img
+    src={Icon.src}
+    alt="Tumblr Share Icon"
+    loading="lazy"
+    decoding="async"
+    class="w-[32px] aspect-square mx-auto"
+  />
+</a>
