@@ -33,23 +33,7 @@ export const menu_links = [
   {
     url: "/projects",
     label: "Projects",
-    subDirectory: [
-      {
-        url: "/projects/project_1",
-        label: "Project 1",
-        subDirectory: [],
-      },
-      {
-        url: "/projects/project_2",
-        label: "Project 2",
-        subDirectory: [],
-      },
-      {
-        url: "/projects/project_3",
-        label: "Project 3",
-        subDirectory: [],
-      },
-    ],
+    subDirectory: [],
   },
   {
     url: "/contact/",

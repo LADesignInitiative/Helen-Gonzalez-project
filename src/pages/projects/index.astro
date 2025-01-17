@@ -1,25 +1,47 @@
 ---
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import { getImageFileName } from "@/hooks/blogHooks.ts";
-
-let AllPhotos: any = [];
-try {
-  AllPhotos = import.meta.glob("../../assets/project-photos/*");
-  //  console.log("AllPhotos: ", typeof AllPhotos);
-  // AllPhotos.forEach((item) => {
-  //   console.log(getImageFileName(item.default.src));
-  // });
-
-  for (let i in AllPhotos) {
-    console.log(i);
-  }
-} catch (e) {
-  AllPhotos = [];
-  console.log("error in retrieving project photos:", e);
-}
+import PhotoData from "@/data/project-photos.js";
+import { FormatProjectImages } from "@/components/squared-gallery/imageHooks.tsx";
+import { BusinessInfo } from "@/data/business-info";
+import { formatPhone } from "@/hooks/number";
+import Gallery from "@/components/squared-gallery/index.tsx";
 ---
 
-<StandardNavBar>
-  <div class="min-h-[90vh] w-full"></div>
+<StandardNavBar pageTitle="Projects">
+  <div class="mx-auto max-w-7xl px-1 sm:px-6 lg:px-8 py-10">
+    <h1
+      class="text-2xl font-bold font-primaryF text-center my-10 capitlize scrollToTopIndicator"
+    >
+      Projects
+    </h1>
+    <Gallery
+      images={PhotoData}
+      altText="Artificial Turf Project"
+      client:only="react"
+    />
+
+    <div class="mt-10 w-full text-center">
+      <h2 class="font-bold text-2xl">
+        Are you interested in installing artificial turf in your outdoor space?
+      </h2>
+      <p class="font-bold">Call or Text Helen</p>
+      <p>{formatPhone(BusinessInfo.phone)}</p>
+      <div class="flex flex-row w-fit mx-auto my-10">
+        <hr class="border-[2xp] w-[100px] my-auto border-slate-300 mx-5" />
+        <p>Or</p>
+        <hr class="border-[2xp] w-[100px] my-auto border-slate-300 mx-5" />
+      </div>
+      <div>
+        <a href="/contact">
+          <button
+            type="button"
+            class="rounded-full bg-primaryC px-4 py-2.5 text-sm font-semibold text-white shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-primaryHoverC my-5 active:translate-x-[1px] active:translate-y-[1px]"
+            >Send us a message</button
+          ></a
+        >
+      </div>
+    </div>
+  </div>
 </StandardNavBar>
 <script src="/script/default.js" is:inline></script>

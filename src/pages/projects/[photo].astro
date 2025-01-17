@@ -16,11 +16,9 @@ export async function getStaticPaths() {
   let AllPhotos: any = [];
   let staticPaths: any = [];
   try {
-    //AllPhotos = await Astro.glob("../../assets/project-photos/*");
-    AllPhotos = import.meta.glob("../../assets/project-photos/*.jpg", {
+    AllPhotos = import.meta.glob("../../assets/project-photos/*", {
       eager: true,
     }) as any;
-
     for (let i in AllPhotos) {
       let fileName = getImageFileName(i);
       var path: {

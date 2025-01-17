@@ -1,12 +1,12 @@
-import project1 from "@/assets/project-photos/project1.jpg";
-import project2 from "@/assets/project-photos/project2.jpg";
-import project3 from "@/assets/project-photos/project3.jpg";
-import project4 from "@/assets/project-photos/project4.jpg";
-import project6 from "@/assets/project-photos/project6.jpg";
-import project7 from "@/assets/project-photos/project7.jpg";
-import project8 from "@/assets/project-photos/project8.jpg";
-import project9 from "@/assets/project-photos/project9.jpg";
-import project10 from "@/assets/project-photos/project10.jpg";
+import project1 from "@/assets/project-photos/project1.webp";
+import project2 from "@/assets/project-photos/project2.webp";
+import project3 from "@/assets/project-photos/project3.webp";
+import project4 from "@/assets/project-photos/project4.webp";
+import project6 from "@/assets/project-photos/project6.webp";
+import project7 from "@/assets/project-photos/project7.webp";
+import project8 from "@/assets/project-photos/project8.webp";
+import project9 from "@/assets/project-photos/project9.webp";
+import project10 from "@/assets/project-photos/project10.webp";
 
 const projects = [
   {

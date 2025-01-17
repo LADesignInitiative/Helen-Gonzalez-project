@@ -1,0 +1,39 @@
+---
+import BeforeImg from "@/assets/project-photos/before-after/project1/before.webp";
+import AfterImg from "@/assets/project-photos/before-after/project1/after.webp";
+import TreeIcon from "@/assets/icons/tree-icon.webp";
+import ReactBeforeSliderComponent from "react-before-after-slider-component";
+import "react-before-after-slider-component/dist/build.css";
+const FIRST_IMAGE = {
+  imageUrl: AfterImg.src,
+  alt: "After",
+};
+const SECOND_IMAGE = {
+  imageUrl: BeforeImg.src,
+  alt: "Before",
+};
+---
+
+<div class="my-10 flex relative overflow-hidden">
+  <div class="absolute top-[50%] left-0 right-0 translate-y-[-50%] z-[-1]">
+    <hr class="border-2 border-solid border-slate-300 block m-auto w-full" />
+  </div>
+  <div
+    class="absolute top-[50%] left-[50%] translate-x-[-50%] translate-y-[-50%] z-[0] w-[210px] aspect-square bg-white rounded-full"
+  >
+  </div>
+  <img
+    src={TreeIcon.src}
+    alt="tree icon"
+    class="w-[150px] aspect-square mx-auto z-[1]"
+    decoding="async"
+    loading="lazy"
+  />
+</div>
+<h2 class="text-center text-3xl">See how we transformed a residence.</h2>
+<ReactBeforeSliderComponent
+  firstImage={FIRST_IMAGE}
+  secondImage={SECOND_IMAGE}
+  className="w-[320px] md:w-[646px] aspect-[3/2] mx-auto my-10"
+  client:only="react"
+/>
