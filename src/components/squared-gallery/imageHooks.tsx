@@ -1,4 +1,4 @@
-import type { PairedArrayType } from "@/util/interface";
+import type { PairedArrayType } from "./interface.tsx";
 
 //This function pairs the file paths of images with their thumbnails and return the pairs in an array.
 const FormatProjectImages = (
