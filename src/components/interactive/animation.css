@@ -52,11 +52,18 @@
 .sinkTag {
   transition:
     opacity 500ms ease,
-    transform 500ms;
+    transform 1000ms;
 }
 
 .sink {
-  transform: translateY(-20px);
+  delay: 500ms;
+  transform: translateY(-20px) !important;
+  opacity: 0;
+}
+
+/*Animation for the forest icon for the CTA footer*/
+.sink2 {
+  transform: translateX(-50%) translateY(-20px) !important;
   opacity: 0;
 }
 
@@ -123,5 +130,12 @@
   100% {
     box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
     transform: translatey(0px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .sink2 {
+    transform: translateY(-20px) !important;
+    opacity: 0;
   }
 }

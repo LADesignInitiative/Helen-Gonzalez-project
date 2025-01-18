@@ -1,0 +1,33 @@
+#top-section {
+  flex-direction: column;
+}
+#person_block {
+}
+
+#circle_info {
+  right: 150px;
+  bottom: -75px;
+}
+
+.about-box-shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+/* sm:w-[270px] sm:h-[270px] bottom-0 sm:bottom-[-75px] sm:right-[-55px]*/
+@media screen and (min-width: 1000px) {
+  #top-section {
+    flex-direction: row;
+    /* width: 92%;  */
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3.5rem;
+  }
+  #person_block {
+    width: fit-content;
+    height: fit-content;
+  }
+  #circle_info {
+    bottom: -75px;
+    right: -55px;
+  }
+}

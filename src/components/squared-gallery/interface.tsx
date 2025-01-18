@@ -2,6 +2,7 @@ type ImageItemType = {
   image: {
     main: string | HTMLImageElement | { src: any };
     thumbnail?: string | HTMLImageElement | null;
+    url?: string;
   };
   altText: string;
   customStyle?: string;
@@ -11,6 +12,7 @@ type ImageItemType = {
 export type PairedArrayType = {
   main: string;
   thumbnail?: string | null | undefined;
+  url?: string;
 };
 
 type GalleryPropType = {

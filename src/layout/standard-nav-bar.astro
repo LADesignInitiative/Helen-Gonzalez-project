@@ -5,6 +5,7 @@ const {
   OGImage,
   canonicalUrl,
   ToBeIndexed = true,
+  withCTA = false,
 } = Astro.props;
 import NavBar from "@/components/navigation/standard/index.astro";
 import BaseLayout from "./BaseLayout.astro";
@@ -17,6 +18,7 @@ import ScrollTopButton from "@/components/buttons/ScrollTopButton/index.astro";
   {OGImage}
   {canonicalUrl}
   {ToBeIndexed}
+  {withCTA}
 >
   <NavBar interactive={false} />
   <div

@@ -3,6 +3,7 @@ export const prerender = true;
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import { getImageFileName } from "@/hooks/blogHooks.ts";
 import SocialMediaComponent from "@/components/socialMedia/share-buttons/index.astro";
+import CTAsection from "@/components/CTA-section.astro";
 type PhotoObjType = {
   src?: string;
   width?: number;
@@ -59,6 +60,7 @@ const { imageObj, title } = Astro.props;
       description="Photo of Hard Rock Landscaping project"
     />
   </div>
+  <CTAsection />
 </StandardNavBar>
 
 <script src="/script/default.js" is:inline></script>

@@ -3,14 +3,14 @@ document.addEventListener("astro:page-load", () => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         if (entry.target.classList.contains("sinkTag")) {
-          entry.target.classList.remove("sink");
+          entry.target.classList.remove("sink2");
         }
       } else {
         if (
           entry.target.classList.contains("sinkTag") &&
-          !entry.target.classList.contains("sink")
+          !entry.target.classList.contains("sink2")
         ) {
-          entry.target.classList.add("sink");
+          entry.target.classList.add("sink2");
         }
       }
     });

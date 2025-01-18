@@ -121,9 +121,6 @@ import CTASection from "@/components/home-components/CTA-section.astro";
           if (entry.target.id === "CTA-right-plant") {
             entry.target.children[0].classList.remove("slideRight");
           }
-          if (entry.target.id === "ClientCounter") {
-            entry.target.children[0].children[0].classList.remove("hidden");
-          }
         } else {
           if (entry.target.classList.contains("fallingTag")) {
             entry.target.classList.add("startingFallingAnim");
@@ -173,12 +170,6 @@ import CTASection from "@/components/home-components/CTA-section.astro";
           if (entry.target.id === "CTA-right-plant") {
             if (!entry.target.children[0].classList.contains("slideRight"))
               entry.target.children[0].classList.add("slideRight");
-          }
-          if (entry.target.id === "ClientCounter") {
-            if (
-              !entry.target.children[0].children[0].classList.contains("hidden")
-            )
-              entry.target.children[0].children[0].classList.add("hidden");
           }
         }
       });
@@ -237,8 +228,5 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     const CTARightPlant = document.getElementById("CTA-right-plant");
     observer.observe(CTALeftPlant);
     observer.observe(CTARightPlant);
-
-    const ClientCounter = document.getElementById("ClientCounter");
-    observer.observe(ClientCounter);
   });
 </script>

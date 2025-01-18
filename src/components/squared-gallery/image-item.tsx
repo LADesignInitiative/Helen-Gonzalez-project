@@ -3,7 +3,7 @@ import { useContext, useRef, useEffect } from "react";
 import { GalleryContext } from "./contextItem.tsx";
 
 const ImageItem = (props: ImageItemType) => {
-  const { image, altText, url, customStyle, index } = props;
+  const { image, altText, customStyle, index } = props;
   const { OpenLightBox, setIndex, currentIndex } = useContext<ContextType>(
     GalleryContext as any,
   );
@@ -17,11 +17,6 @@ const ImageItem = (props: ImageItemType) => {
   return (
     <img
       id={`squared-gallery-image-item-${index}`}
-      // onClick={() => {
-      //   if (index === currentIndex) {
-      //     OpenLightBox();
-      //   } else setIndex(index);
-      // }}
       onClick={() => {
         location.href = `/projects/${image.url}`;
       }}

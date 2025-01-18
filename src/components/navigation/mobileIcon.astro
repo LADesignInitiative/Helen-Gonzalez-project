@@ -1,12 +1,12 @@
 ---
-const { customDiv } = Astro.props;
+const { customDiv, dark = true } = Astro.props;
 ---
 
 <div
   id="mobile-nav-toggler"
   class={`${customDiv ? customDiv : "mobile-nav-toggler my-auto mr-[1rem] cursor-pointer block"}`}
 >
-  <i class="icon-bar"></i>
-  <i class="icon-bar"></i>
-  <i class="icon-bar"></i>
+  <i class=`icon-bar ${dark ? "icon-bar-dark" : "icon-bar-white"}`></i>
+  <i class=`icon-bar ${dark ? "icon-bar-dark" : "icon-bar-white"}`></i>
+  <i class=`icon-bar ${dark ? "icon-bar-dark" : "icon-bar-white"}`></i>
 </div>

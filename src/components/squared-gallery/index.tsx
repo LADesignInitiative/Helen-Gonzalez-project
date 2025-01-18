@@ -137,7 +137,6 @@ const Gallery = (props: GalleryPropType) => {
               <Suspense key={uuid()} fallback={<LoadingIndicator />}>
                 <ImageItem
                   image={item}
-                  url={item.url}
                   altText={altText}
                   index={index}
                   aria-label={`Image ${index + 1} of ${images.length}`}

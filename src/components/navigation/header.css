@@ -198,5 +198,12 @@
   width: 30px;
   display: block;
   margin-bottom: 5px;
+}
+
+.icon-bar-dark {
+  background-color: #333333;
+}
+
+.icon-bar-white {
   background-color: #dbdbdb;
 }

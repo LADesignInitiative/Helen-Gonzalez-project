@@ -1,12 +1,12 @@
 ---
 /*desktop nav item*/
 import type { NavItemType } from "@/util/interface.tsx";
-const { label, url, subDirectory } = Astro.props;
+const { label, url, subDirectory, text_black = true } = Astro.props;
 import arrow from "@/assets/icons/white-right-chevron.webp";
 ---
 
 <li
-  class="dropdown text-black cursor-pointer mr-5 !block select-none active:bg-transparent relative group"
+  class=`dropdown cursor-pointer mr-5 !block select-none active:bg-transparent relative group ${text_black ? "text-black" : "text-white"}`
 >
   <a
     href={url}

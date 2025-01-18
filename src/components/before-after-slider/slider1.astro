@@ -31,9 +31,11 @@ const SECOND_IMAGE = {
   />
 </div>
 <h2 class="text-center text-3xl">See how we transformed a residence.</h2>
-<ReactBeforeSliderComponent
-  firstImage={FIRST_IMAGE}
-  secondImage={SECOND_IMAGE}
-  className="w-[320px] md:w-[646px] aspect-[3/2] mx-auto my-10"
-  client:only="react"
-/>
+<div class="md:w-[768px] mx-auto">
+  <ReactBeforeSliderComponent
+    firstImage={FIRST_IMAGE}
+    secondImage={SECOND_IMAGE}
+    className="w-[320px] md:w-[646px] aspect-[3/2] mx-auto my-10"
+    client:only="react"
+  />
+</div>

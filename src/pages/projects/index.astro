@@ -1,8 +1,6 @@
 ---
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
-import { getImageFileName } from "@/hooks/blogHooks.ts";
 import PhotoData from "@/data/project-photos.js";
-import { FormatProjectImages } from "@/components/squared-gallery/imageHooks.tsx";
 import { BusinessInfo } from "@/data/business-info";
 import { formatPhone } from "@/hooks/number";
 import Gallery from "@/components/squared-gallery/index.tsx";
@@ -16,7 +14,7 @@ import Gallery from "@/components/squared-gallery/index.tsx";
       Projects
     </h1>
     <Gallery
-      images={PhotoData}
+      images={PhotoData as any}
       altText="Artificial Turf Project"
       client:only="react"
     />

@@ -3,15 +3,14 @@
 //Utilizes the class name scrollToTopIndicator to trigger the scrollToTop
 
 import TitleComponent from "../TitleComponent/index.astro";
-import defaultImage from "@/assets/images/overview-city.jpg";
+import AnimatedGrass from "../animated_grass/index.astro";
 const { image, title, subtitle, button_label, link, wrapperStyle } =
   Astro.props;
 ---
 
 <div
   id="small_banner"
-  class={`relative h-[250px] w-full before:absolute  before:content-[''] before:bg-[rgba(0,0,0,0.4)] before:w-full before:h-full before:z-10 scrollToTopIndicator bg-fixed bg-cover bg-center bg-no-repeat `}
-  style={{ backgroundImage: `url(${image ? image.src : defaultImage.src})` }}
+  class={`relative h-[350px] w-full before:absolute  before:content-[''] before:bg-[rgba(0,0,0,0.4)] before:w-full before:h-full before:z-10 scrollToTopIndicator bg-fixed bg-cover bg-no-repeat bg-[url('/assets/images/grass-646.webp')] sm:bg-[url('/assets/images/grass.webp')] !bg-bottom`}
 >
   {
     title && (
@@ -25,4 +24,5 @@ const { image, title, subtitle, button_label, link, wrapperStyle } =
       />
     )
   }
+  <AnimatedGrass />
 </div>

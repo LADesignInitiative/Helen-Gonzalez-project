@@ -1,0 +1,14 @@
+.animated-grass{
+
+    animation: slideRight 60s linear infinite;
+    -webkit-animation: slideRight 60s linear infinite;
+}
+
+@keyframes slideRight {
+    to{
+        background-position: 1920px 0px; 
+    }
+    from {
+        background-position: 0px 0px; 
+    }
+}
