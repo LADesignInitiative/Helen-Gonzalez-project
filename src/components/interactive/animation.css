@@ -49,7 +49,8 @@
   opacity: 0;
 }
 
-.sinkTag {
+.sinkTag,
+.sinkTag2 {
   transition:
     opacity 500ms ease,
     transform 1000ms;

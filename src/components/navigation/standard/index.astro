@@ -18,6 +18,7 @@ const { interactive } = Astro.props;
   document.addEventListener("astro:page-load", () => {
     const MobileToggler = document.getElementById("mobile-nav-toggler");
     const CloseBtn = document.getElementById("close-btn");
+    const CloseMenuLink = document.getElementById("close-menu-link");
     const MobileMenu = document.getElementById("mobile-menu");
     const Backdrop = document.getElementById("backdrop");
     const OpenMenu = () => {
@@ -52,6 +53,7 @@ const { interactive } = Astro.props;
     };
     MobileToggler?.addEventListener("mousedown", OpenMenu);
     CloseBtn?.addEventListener("mousedown", CloseMenu);
+    CloseMenuLink?.addEventListener("mousedown", CloseMenu);
     window.addEventListener("mousedown", CheckIfClickedOutside);
   });
 </script>

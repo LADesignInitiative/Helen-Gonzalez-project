@@ -2,12 +2,12 @@ document.addEventListener("astro:page-load", () => {
   const callback = (entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        if (entry.target.classList.contains("sinkTag")) {
+        if (entry.target.classList.contains("sinkTag2")) {
           entry.target.classList.remove("sink2");
         }
       } else {
         if (
-          entry.target.classList.contains("sinkTag") &&
+          entry.target.classList.contains("sinkTag2") &&
           !entry.target.classList.contains("sink2")
         ) {
           entry.target.classList.add("sink2");
@@ -19,7 +19,7 @@ document.addEventListener("astro:page-load", () => {
     threshold: 0.1,
   };
   const observer = new IntersectionObserver(callback, options);
-  const SinkTag = document.getElementsByClassName("sinkTag");
+  const SinkTag = document.getElementsByClassName("sinkTag2");
   for (var i = 0; i < SinkTag.length; i++) {
     observer.observe(SinkTag[i]);
   }
