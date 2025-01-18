@@ -74,7 +74,7 @@ const LinkItem = (props: LinkItemType) => {
     <>
       <div
         ref={dirRef}
-        className={`relative flex flex-row border-t-[1px] border-t-[#686868] py-[10px] pl-[25px] hover:bg-slate-800 text-slate-300`}
+        className={`relative flex flex-row border-t-[1px] border-t-[#686868] py-[10px] pl-[25px] hover:bg-slate-800 text-slate-300 cursor-pointer`}
       >
         <a href={url} className="leader-[24px] relative !my-auto block">
           {label}
