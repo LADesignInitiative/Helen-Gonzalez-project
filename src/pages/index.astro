@@ -154,11 +154,28 @@ import CTASection from "@/components/home-components/CTA-section.astro";
             }
           }
           /*interest section*/
-          if (entry.target.classList.contains("SellExperience")) {
-            if (!entry.target.classList.contains("fadeOutDown")) {
+          // if (entry.target.classList.contains("SellExperience")) {
+          //   if (!entry.target.classList.contains("fadeOutDown")) {
+          //     entry.target.classList.add("fadeOutDown");
+          //   }
+          // }
+
+          if (entry.target.id === "selling-item-1") {
+            if (!entry.target.classList.contains("fadeOutDown"))
               entry.target.classList.add("fadeOutDown");
-            }
+            SellItemInsignia1.classList.remove("before:scale-100");
           }
+          if (entry.target.id === "selling-item-2") {
+            if (!entry.target.classList.contains("fadeOutDown"))
+              entry.target.classList.add("fadeOutDown");
+            SellItemInsignia2.classList.remove("before:scale-100");
+          }
+          if (entry.target.id === "selling-item-3") {
+            if (!entry.target.classList.contains("fadeOutDown"))
+              entry.target.classList.add("fadeOutDown");
+            SellItemInsignia3.classList.remove("before:scale-100");
+          }
+
           if (entry.target.id === "Graphic_patterns") {
             PatternTwo?.classList.remove("slideInRight");
             PatternThree?.classList.remove("slideInLeft");
