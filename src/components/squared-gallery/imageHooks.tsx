@@ -10,7 +10,6 @@ const FormatProjectImages = (
     images?.forEach((img) => {
       let tempArr = img.split("/");
       let fileName = tempArr[tempArr.length - 1];
-      let expression = new RegExp(`/${fileName}/`, "g");
       let thumbnailPath = thumbnails?.find((thumb, index) =>
         thumb.match(fileName),
       );
