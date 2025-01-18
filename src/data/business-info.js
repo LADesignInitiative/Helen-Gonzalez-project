@@ -26,7 +26,7 @@ export const BusinessInfo = {
   twitch: "",
   /*URL that leads to Google Business Profile review */
   Google_review_url:
-    "https://www.google.com/maps/place/Hard+Rock+Landscaping/@34.0277988,-118.3588276,14z/data=!4m6!3m5!1s0x80c2b9adad25520d:0x9cdbea1cbbd44530!8m2!3d34.0277988!4d-118.3588276!16s%2Fg%2F11fswkfcj3?entry=ttu&g_ep=EgoyMDI0MTExMi4wIKXMDSoASAFQAw%3D%3D",
+    "https://www.google.com/search?q=hard+rock+landscaping+&sca_esv=567ab18d067741e3&sxsrf=ADLYWIJPXe8VGJZGJLgINm6N3lCwsUysEg%3A1737167974442&source=hp&ei=ZhSLZ6fnGPiXkPIPqc-gEQ&iflsig=AL9hbdgAAAAAZ4sidmoqm66xtqB-xLyTQwphNjE5nzey&ved=0ahUKEwinsp6An_6KAxX4C0QIHaknKAIQ4dUDCBk&uact=5&oq=hard+rock+landscaping+&gs_lp=Egdnd3Mtd2l6IhZoYXJkIHJvY2sgbGFuZHNjYXBpbmcgMgoQIxiABBgnGIoFMgsQLhiABBjHARivATIFEAAYgAQyBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHjIGEAAYFhgeMgYQABgWGB4yBhAAGBYYHkjWFVAAWKMVcAB4AJABAJgBkwOgAbQWqgEKMTMuNC4xLjIuMbgBA8gBAPgBAZgCFaAC7BbCAgoQABiABBhDGIoFwgIOEC4YgAQYsQMY0QMYxwHCAgsQABiABBixAxiDAcICCxAAGIAEGJECGIoFwgIQEC4YgAQY0QMYQxjHARiKBcICEBAuGIAEGLEDGEMY1AIYigXCAhEQABiABBiRAhixAxiDARiKBcICCBAuGIAEGLEDwgILEC4YgAQY0QMYxwHCAg0QLhiABBhDGOUEGIoFwgIIEAAYgAQYyQPCAgsQLhiABBixAxiDAcICDhAuGIAEGMcBGI4FGK8BwgILEAAYgAQYkgMYigXCAggQABiABBixA8ICDhAAGIAEGLEDGIMBGIoFwgIOEC4YgAQYsQMYxwEYrwHCAhQQLhiABBjHARiYBRiZBRieBRivAcICGhAuGIAEGLEDGIMBGMcBGJgFGJkFGJ4FGK8BwgIUEC4YgAQYkgMYxwEYyQMYjgUYrwHCAhcQLhiABBixAxjHARiYBRiZBRieBRivAcICBBAAGAOYAwCSBwoxMi41LjEuMS4yoAfnswI&sclient=gws-wiz#lrd=0x80c2b9adad25520d:0x9cdbea1cbbd44530,3,,,,",
   hours: [
     { day: "Monday", hours: "9am-8pm" },
     { day: "Tuesday", hours: "9am-8pm" },

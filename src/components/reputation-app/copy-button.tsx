@@ -17,7 +17,7 @@ const CopyButton = (props: { CopiedMessageRef: any }) => {
   };
   return (
     <button
-      className="flex flex-row flex-nowrap gap-x-5 duration-500 mx-auto py-[20px] px-[30px] text-[18px] min-[480px]:px-[50px] min-[480px]:text-[20px] md:py-[24px] md:px-[110px] md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-white hover:bg-primaryC hover:text-secondaryC text-center my-[10px] font-secondaryF font-[500] transition-all text-black group rounded-lg hover:bg-slate-300"
+      className="flex flex-row flex-nowrap gap-x-5 duration-500 mx-auto py-[20px] px-[30px] text-[18px] min-[480px]:px-[50px] min-[480px]:text-[20px] md:py-[24px] md:px-[110px] md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-white hover:bg-primaryC hover:text-secondaryC text-center my-[10px] font-secondaryF font-[500] transition-all text-black group rounded-lg hover:bg-slate-300 shadow-[rgba(0,0,0,0.35)_0px_5px_15px]"
       onClick={ClickEvent}
     >
       <div>Copy your review</div>

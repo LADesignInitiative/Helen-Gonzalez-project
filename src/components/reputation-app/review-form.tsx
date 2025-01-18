@@ -166,7 +166,7 @@ const ReviewForm = () => {
             type="button"
             onClick={submitEvent}
             data-wait="Please wait..."
-            className="duration-500 py-[20px] px-[30px] text-[18px] min-[480px]:px-[50px] min-[480px]:text-[20px] md:py-[24px] md:px-[110px] md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-primaryC text-secondaryC text-center my-[10px] mr-[10px] font-secondaryF font-[500] transition-all hover:bg-slate-300"
+            className="duration-500 py-[20px] px-[30px] text-[18px] min-[480px]:px-[50px] min-[480px]:text-[20px] md:py-[24px] md:px-[110px] md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-primaryC text-white text-center my-[10px] mr-[10px] font-secondaryF font-[500] transition-all hover:bg-slate-300"
             value="Leave Feedback"
           />
         </div>

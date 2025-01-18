@@ -4,14 +4,15 @@ import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import Banner from "@/components/small_banner/index.astro";
 import AboutHelen from "@/components/about-page/about-helen.astro";
 import "@/components/interactive/animation.css";
+import { BusinessInfo } from "@/data/business-info";
 ---
 
 <StandardNavBar
   pageTitle="About Us"
-  customDescription="About page"
+  customDescription=`${BusinessInfo.companyName} is an artificial turf installation company that transforms home owner's outdoor spaces.`
   withCTA={true}
 >
-  <Banner title="About Us" subtitle="Over 200 clients served" />
+  <Banner title="About Us" subtitle="Over 300 clients served" />
   <AboutHelen />
 </StandardNavBar>
 <script src="/script/default.js" is:inline></script>

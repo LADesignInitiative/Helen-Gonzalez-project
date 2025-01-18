@@ -1,0 +1,27 @@
+---
+export const prerender = true;
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import Banner from "@/components/small_banner/index.astro";
+import AboutHelen from "@/components/about-page/about-helen.astro";
+import Accordion from "@/components/accordion_component/index.tsx";
+import FAQList from "@/data/faq-list";
+import type { AccordionType } from "@/util/interface";
+import "@/components/interactive/animation.css";
+import Graphics from "@/components/faq-page/graphicsWrapper.astro";
+---
+
+<StandardNavBar
+  pageTitle="Frequently Asked Questions"
+  customDescription="Do you have a question in mind about installing artificial turf? See if your question can be answered here."
+  withCTA={true}
+>
+  <Banner
+    title="Frequently Asked Questions"
+    subtitle="Do you have a question in mind about installing artificial turf? See if your question can be answered here."
+  />
+  <div class="grid sm:grid-cols-2">
+    <Accordion data={FAQList as Array<AccordionType>} client:only="react" />
+    <Graphics />
+  </div>
+</StandardNavBar>
+<script src="/script/default.js" is:inline></script>

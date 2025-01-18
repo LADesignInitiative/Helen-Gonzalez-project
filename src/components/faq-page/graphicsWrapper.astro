@@ -1,0 +1,57 @@
+---
+import Potted_Plants from "@/assets/images/faq/dog-artificial-turf-290.webp";
+import Apples from "@/assets/images/faq/yard-640.webp";
+import Leaf from "@/assets/images/shape/shape-33.png";
+import "./style.css";
+---
+
+<div class="w-full sm:w-6/12 mx-auto justify-center">
+  <div class="sm:h-fit relative top-[25%] hidden sm:block">
+    <div
+      id="PottedPlants"
+      class="overflow-hidden w-[325px] h-auto absolute parallaxProp z-[2] sm:right-[-150px] box_shadow"
+    >
+      <img
+        decoding="async"
+        loading="lazy"
+        src={Potted_Plants.src}
+        class="w-full h-full object-cover m-auto"
+        alt="Potted Plants"
+      />
+    </div>
+    <div
+      id="Apples"
+      class="overflow-hidden w-11/12 h-auto absolute parallaxProp z-[1] sm:left-[-75px] box_shadow"
+    >
+      <img
+        decoding="async"
+        loading="lazy"
+        src={Apples.src}
+        class="w-full h-full object-cover m-auto"
+        alt="Apples"
+      />
+    </div>
+    <div class="overflow-hidden w-[300px] h-auto absolute parallaxProp z-[0]">
+      <img
+        decoding="async"
+        loading="lazy"
+        src={Leaf.src}
+        class="w-full h-full object-cover m-auto"
+        alt="Apples"
+      />
+    </div>
+  </div>
+</div>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const PottedPlants = document.getElementById("PottedPlants");
+    const Apples = document.getElementById("Apples");
+    const scrollEvent = () => {
+      if (PottedPlants)
+        PottedPlants.style.transform = `translateY(${-window.scrollY}px)`;
+      if (Apples)
+        Apples.style.transform = `translateY(${-window.scrollY / 2}px)`;
+    };
+    window.addEventListener("scroll", scrollEvent);
+  });
+</script>

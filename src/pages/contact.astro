@@ -1,15 +1,14 @@
 ---
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import ContactForm from "@/components/contact-form/split.astro";
+import Banner from "@/components/small_banner/index.astro";
 import Leaf from "@/components/contact-form/leaf.png";
 ---
 
 <StandardNavBar pageTitle="Contact Us">
+  <Banner title="Contact Us" subtitle="Let us know what's on your mind" />
   <div class="my-10 px-5 mx-auto py-32 relative overflow-hidden">
-    <ContactForm
-      title="Contact Us"
-      subtitle="Every project begins with a hello"
-    />
+    <ContactForm />
     <div>
       <img
         src={Leaf.src}
@@ -19,3 +18,31 @@ import Leaf from "@/components/contact-form/leaf.png";
     </div>
   </div>
 </StandardNavBar>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("sinkTag")) {
+            entry.target.classList.remove("sink");
+          }
+        } else {
+          if (
+            entry.target.classList.contains("sinkTag") &&
+            !entry.target.classList.contains("sink")
+          ) {
+            entry.target.classList.add("sink");
+          }
+        }
+      });
+    };
+    const options = {
+      threshold: 0.1,
+    };
+    const observer = new IntersectionObserver(callback, options);
+    const SinkTag = document.getElementsByClassName("sinkTag");
+    for (var i = 0; i < SinkTag.length; i++) {
+      observer.observe(SinkTag[i]);
+    }
+  });
+</script>

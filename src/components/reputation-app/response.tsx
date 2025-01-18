@@ -6,6 +6,7 @@ import GoogleIcon from "./assets/Google-icon.webp";
 import MessageComponent from "../MessageComponent/index.tsx";
 import uuid from "react-uuid";
 import { BusinessInfo } from "@/data/business-info.js";
+import "./style.css";
 
 const ResponseElement = () => {
   const { rating, responseRef } = useContext(FeedbackContext);
@@ -57,9 +58,9 @@ const GoogleReviewRequest = () => {
       <a href={BusinessInfo.Google_review_url} target="_blank">
         <button
           type="button"
-          className="mx-auto flex gap-x-5 text-center mt-[60px] duration-500 py-[20px] px-[10px] text-[18px] min-[480px]:text-[20px] md:py-[24px]  md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-white text-secondaryC text-center my-[10px] font-secondaryF font-[500] transition-all active:translate-x-[1px] active:translate-y-[1px] hover:bg-slate-200"
+          className="mx-auto flex gap-x-5 text-center mt-[60px] duration-500 py-[20px] px-[10px] text-[18px] min-[480px]:text-[20px] md:py-[24px]  md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-white text-secondaryC text-center my-[10px] font-secondaryF font-[500] transition-all active:translate-x-[1px] active:translate-y-[1px] hover:bg-slate-200 floatAnim"
         >
-          <div>Post feedback on Google</div>
+          <div>Post your feedback on Google</div>
           <img
             src={GoogleIcon.src}
             alt="Google Icon"

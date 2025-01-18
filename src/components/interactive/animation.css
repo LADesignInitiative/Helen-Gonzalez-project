@@ -53,10 +53,10 @@
   transition:
     opacity 500ms ease,
     transform 1000ms;
+  transition-delay: 500ms;
 }
 
 .sink {
-  delay: 500ms;
   transform: translateY(-20px) !important;
   opacity: 0;
 }

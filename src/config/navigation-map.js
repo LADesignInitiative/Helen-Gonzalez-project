@@ -10,25 +10,9 @@ export const menu_links = [
     subDirectory: [],
   },
   {
-    url: "/services",
-    label: "Services",
-    subDirectory: [
-      {
-        url: "/services/service_1",
-        label: "Service 1",
-        subDirectory: [],
-      },
-      {
-        url: "/services/service_2",
-        label: "Service 2",
-        subDirectory: [],
-      },
-      {
-        url: "/services/service 3",
-        label: "Service 3",
-        subDirectory: [],
-      },
-    ],
+    url: "/faq",
+    label: "FAQ",
+    subDirectory: [],
   },
   {
     url: "/projects",

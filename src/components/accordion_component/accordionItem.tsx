@@ -1,5 +1,5 @@
 import { useRef, useEffect } from "react";
-import UpArrow from "@/assets/images/icons/up-arrow-white.svg";
+import UpArrow from "./up-arrow.svg";
 import "./style.css";
 
 const Accordion = (props: {
