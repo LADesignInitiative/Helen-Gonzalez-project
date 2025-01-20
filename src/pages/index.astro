@@ -212,6 +212,11 @@ import CTASection from "@/components/home-components/CTA-section.astro";
       const element = document.getElementById(elementId);
       if (element) {
         observer.observe(element);
+      } else {
+        //only uncomment the following for debugging
+        // console.warn(
+        //   `Failed to observe element with id "${elementId}" as it does not exist.`,
+        // );
       }
     };
 
