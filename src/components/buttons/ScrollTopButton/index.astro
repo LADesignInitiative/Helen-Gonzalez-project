@@ -20,10 +20,12 @@ import "./style.css";
   document.addEventListener("astro:page-load", () => {
     const indicator = document.querySelector(".scrollToTopIndicator");
     const ScrollTopButton = document.querySelector("#ScrollTopButton");
+    if (!indicator || !ScrollTopButton) return;
     ScrollTopButton?.addEventListener("mousedown", () =>
       window.scrollTo({ top: 0, left: 0, behavior: "smooth" }),
     );
     const ButtonScrollEvent = (evt) => {
+      if (!indicator) return;
       if (indicator.getBoundingClientRect().top < 0) {
         ScrollTopButton?.classList.remove("invisible");
         ScrollTopButton?.classList.remove("buttonHidden");
