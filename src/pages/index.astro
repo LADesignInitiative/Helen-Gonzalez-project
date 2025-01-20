@@ -37,9 +37,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     const GraphicPatterns = document.getElementById("Graphic_patterns");
     const PatternTwo = document.getElementById("interest-pattern-2");
     const PatternThree = document.getElementById("interest-pattern-3");
-    const SellItem1 = document.getElementById("selling-item-1");
-    const SellItem2 = document.getElementById("selling-item-2");
-    const SellItem3 = document.getElementById("selling-item-3");
+
     const SellItemInsignia1 = document.getElementById(
       "selling-item-insignia-1",
     );
@@ -210,14 +208,16 @@ import CTASection from "@/components/home-components/CTA-section.astro";
       observer.observe(ChildrenFadeInFromBottomTag[i]);
     }
 
-    const LowerCost = document.getElementById("lower-cost");
-    const Conservation = document.getElementById("conservation");
-    const Durability = document.getElementById("durability");
-    const Safety = document.getElementById("safety");
-    observer.observe(LowerCost);
-    observer.observe(Conservation);
-    observer.observe(Durability);
-    observer.observe(Safety);
+    const observeElement = (elementId) => {
+      const element = document.getElementById(elementId);
+      if (element) {
+        observer.observe(element);
+      }
+    };
+
+    // List of element IDs to observe
+    const elementIds = ["lower-cost", "conservation", "durability", "safety"];
+    elementIds.forEach(observeElement);
 
     /** Introducing Flow animation */
     const RotateContainer = document.getElementsByClassName("rotateContainer");
@@ -226,7 +226,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     }
 
     /*interest section */
-    observer.observe(GraphicPatterns);
+    if (GraphicPatterns) observer.observe(GraphicPatterns);
 
     const SellExperience = document.getElementsByClassName("SellExperience");
     for (let i = 0; i < SellExperience.length; i++) {
@@ -236,7 +236,7 @@ import CTASection from "@/components/home-components/CTA-section.astro";
     /*CTA section */
     const CTALeftPlant = document.getElementById("CTA-left-plant");
     const CTARightPlant = document.getElementById("CTA-right-plant");
-    observer.observe(CTALeftPlant);
-    observer.observe(CTARightPlant);
+    if (CTALeftPlant) observer.observe(CTALeftPlant);
+    if (CTARightPlant) observer.observe(CTARightPlant);
   });
 </script>
