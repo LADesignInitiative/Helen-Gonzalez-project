@@ -66,9 +66,9 @@ const TestimonialLightBox = () => {
               </figure>
             )}
             <div>
-              <h5 className="relative mb-[2px] block text-lg font-medium sm:text-4xl">
+              <p className="relative mb-[2px] block text-lg font-medium sm:text-4xl">
                 {name}
-              </h5>
+              </p>
               <span className="relative mb-[2px] block text-base sm:text-xl">
                 {designation}
               </span>

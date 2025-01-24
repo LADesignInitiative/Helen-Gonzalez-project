@@ -18,7 +18,7 @@ export default {
       colors: {
         primaryC: "#048fd4",
         primaryHoverC: "#67cafb",
-        secondaryC: "#82b02a",
+        secondaryC: "#6f9723",
         darkBlack: "#161d27",
       },
     },

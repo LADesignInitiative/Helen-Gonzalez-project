@@ -4,18 +4,18 @@ const { label, link } = Astro.props;
 
 <a href={link}>
   <button
-    class="overflow-hidden bg-primaryC hover:bg-secondaryC rounded-sm cursor-pointer group active:translate-x-[1px] active:translate-y-[1px]"
+    class="overflow-hidden bg-[#0685c4] hover:bg-secondaryC rounded-sm cursor-pointer group active:translate-x-[1px] active:translate-y-[1px]"
   >
     <div
       class="grid overflow-hidden w-[200px] min-h-[40px] max-h-[65px] relative"
     >
       <div class="flex flex-row-reverse relative">
         <span
-          class="inline-block text-white uppercase px-5 py-2 text-lg absolute inset-0 transition-all duration-500 group-hover:translate-y-[-50px]"
+          class="inline-block text-white uppercase font-bold px-5 py-2 text-lg absolute inset-0 transition-all duration-500 group-hover:translate-y-[-50px]"
           >{label}
         </span>
         <span
-          class="inline-block text-white uppercase px-5 py-2 text-lg absolute inset-0 translate-y-[50px] transition-all duration-500 group-hover:translate-y-[0px]"
+          class="inline-block text-white uppercase font-bold px-5 py-2 text-lg absolute inset-0 translate-y-[50px] transition-all duration-500 group-hover:translate-y-[0px]"
           >{label}
         </span>
         <div class="my-auto relative h-full w-[35px] overflow-x-hidden">

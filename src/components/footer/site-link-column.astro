@@ -10,11 +10,11 @@ import type { MenuLinks } from "@/util/interface";
     menu_links && menu_links.length > 0 && (
       <ul class="contact-info clearfix">
         {menu_links.map((links: MenuLinks, index: number): any => (
-          <a href={links.url}>
-            <li class="relative block mb-[20px] !text-white text-center">
+          <li class="relative block mb-[20px] !text-white text-center">
+            <a href={links.url}>
               <p class="text-lg">{links.label as string}</p>
-            </li>
-          </a>
+            </a>
+          </li>
         ))}
       </ul>
     )
