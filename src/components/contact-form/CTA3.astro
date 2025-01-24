@@ -77,18 +77,18 @@ const {
 </form>
 
 <script type="module" define:vars={{ BusinessInfo }} is:inline>
-  document.addEventListener("astro:page-load", () => {
-    const ContactForm = document.getElementById("contactForm");
+  // document.addEventListener("astro:page-load", () => {
+  //   const ContactForm = document.getElementById("contactForm");
 
-    const HandleSubmit = () => {
-      try {
-      } catch (error) {
-        console.log("error: ", error);
-      }
-    };
-    ContactForm?.addEventListener("submit", (event) => {
-      event.preventDefault();
-      HandleSubmit();
-    });
-  });
+  //   const HandleSubmit = () => {
+  //     try {
+  //     } catch (error) {
+  //       console.log("error: ", error);
+  //     }
+  //   };
+  //   ContactForm?.addEventListener("submit", (event) => {
+  //     event.preventDefault();
+  //     HandleSubmit();
+  //   });
+  // });
 </script>
