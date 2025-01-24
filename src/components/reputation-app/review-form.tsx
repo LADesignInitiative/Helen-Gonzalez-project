@@ -71,7 +71,7 @@ const ReviewForm = () => {
       let templateParams = {
         to_name: BusinessInfo.owner,
         from_name: name,
-        subject_line: `Left feedback for your business on your website.`,
+        subject_line: `Someone left feedback for your business on your website.`,
         service: "n/a",
         phone: "n/a",
         message: customMessage,
