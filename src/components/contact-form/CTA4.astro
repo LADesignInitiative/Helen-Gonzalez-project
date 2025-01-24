@@ -1,6 +1,8 @@
 ---
 //Uses formsubmit.co
 import { BusinessInfo } from "@/data/business-info.js";
+const currentURL = Astro.url;
+console.log("url: ", currentURL);
 
 const {
   title = "Have something to say?",
@@ -27,11 +29,7 @@ const {
         <h2 class="text-base sm:text-lg text-center my-1">{subtitle}</h2>
       </section>
     </div>
-    <input
-      type="hidden"
-      name="subject"
-      value="Someone has requested a quote from your website"
-    />
+
     <div class="flex flex-col w-full my-[10px]">
       <label class="formLabel" for="nameInput">Full name *</label>
       <input
@@ -71,11 +69,7 @@ const {
         class="text-base outline-1 border-2 border-solid border-slate-200 resize-none p-1 rounded-lg bg-transparent placeholder:text-base placeholder:text-slate-800"
         placeholder="Type your message here."></textarea>
     </div>
-    <input
-      type="hidden"
-      name="_next"
-      value="https://hard-rock-landscaping.netlify.app/quote_requested"
-    />
+    <input type="hidden" name="_next" value=`${currentURL}quote_requested` />
     <button
       class="fancyButton bg-primaryC hover:bg-primarcyHoverC !mx-auto text-center"
       type="submit">{BTNLabel}</button
