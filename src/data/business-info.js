@@ -11,7 +11,7 @@ export const BusinessInfo = {
   email: "helen@hardrocklandscapingca.com",
   website_name: "Hard Rock Landscaping",
   websiteURL: "www.HardRockLandscapingCA.com",
-  lastUpdated: "November 13, 2024",
+  lastUpdated: "January 25, 2025",
   OpenGraphImg: {
     src: "",
     alt: "",

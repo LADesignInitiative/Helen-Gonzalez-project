@@ -1,7 +1,6 @@
 ---
 export const prerender = true;
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
-import NavBar from "@/components/navigation/standard/index.astro";
 import { BusinessInfo } from "@/data/business-info";
 ---
 
@@ -16,10 +15,12 @@ import { BusinessInfo } from "@/data/business-info";
       margin: 20px 0px;
     }
   </style>
-  <div class="w-11/12 md:w-3/4 mx-auto font-primaryF px-10 text-2xl">
+  <div
+    class="w-11/12 md:w-3/4 mx-auto font-primaryF px-10 text-2xl leading-10 [&>p]:mb-5"
+  >
     <h2><strong>Terms and Conditions</strong></h2>
 
-    <p>Welcome to {BusinessInfo.companyName}!</p>
+    <h3 class="font-bold">Welcome to {BusinessInfo.companyName}!</h3>
 
     <p>
       These terms and conditions outline the rules and regulations for the use
