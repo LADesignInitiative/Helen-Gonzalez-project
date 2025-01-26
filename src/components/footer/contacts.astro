@@ -17,33 +17,16 @@ import {
         class="contact-info clearfix text-center md:text-left md:max-w-[200px] mx-auto"
       >
         {
-          BusinessInfo.street && BusinessInfo.street != "" && (
-            <li class="relative block mb-1">
-              <p class="text-lg">{BusinessInfo.street}</p>
-            </li>
-          )
-        }
-        {
-          (BusinessInfo.city ||
-            BusinessInfo.state ||
-            BusinessInfo.country ||
-            BusinessInfo.zip) && (
+          (BusinessInfo.city || BusinessInfo.state || BusinessInfo.country) && (
             <li class="relative block mb-1">
               <p class="text-lg">
                 {BusinessInfo.city && <span>{BusinessInfo.city},</span>}
                 {BusinessInfo.state && <span>{BusinessInfo.state}</span>}
-                {BusinessInfo.zip && <span>{BusinessInfo.zip}</span>}
               </p>
             </li>
           )
         }
-        {
-          BusinessInfo.country && (
-            <li class="relative block mb-1">
-              <p class="text-lg">{BusinessInfo.country}</p>
-            </li>
-          )
-        }
+
         <li>
           <hr
             class="border-slate-100 w-full sm:3/12 md:w-full mx-auto my-5 opacity-50"
