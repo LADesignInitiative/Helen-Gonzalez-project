@@ -2,12 +2,12 @@
 export const prerender = true;
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import Banner from "@/components/small_banner/index.astro";
-import AboutHelen from "@/components/about-page/about-helen.astro";
 import Accordion from "@/components/accordion_component/index.tsx";
 import FAQList from "@/data/faq-list";
 import type { AccordionType } from "@/util/interface";
 import "@/components/interactive/animation.css";
 import Graphics from "@/components/faq-page/graphicsWrapper.astro";
+return Astro.redirect("/expired");
 ---
 
 <StandardNavBar

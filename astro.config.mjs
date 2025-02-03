@@ -12,5 +12,5 @@ import mdx from "@astrojs/mdx";
 export default defineConfig({
   integrations: [tailwind(), react(), sitemap(), robotsTxt(), icon(), mdx()],
   output: "server",
-  adapter: netlify()
+  adapter: netlify(),
 });
