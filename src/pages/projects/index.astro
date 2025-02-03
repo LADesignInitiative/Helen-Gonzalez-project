@@ -3,7 +3,8 @@ import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import PhotoData from "@/data/project-photos.js";
 import Banner from "@/components/small_banner/index.astro";
 import Gallery from "@/components/squared-gallery/index.tsx";
-return Astro.redirect("/expired");
+import { BusinessInfo } from "@/data/business-info";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar pageTitle="Projects" withCTA={true}>

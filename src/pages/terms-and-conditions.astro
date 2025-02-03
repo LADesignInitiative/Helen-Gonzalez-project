@@ -2,6 +2,7 @@
 export const prerender = true;
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import { BusinessInfo } from "@/data/business-info";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar

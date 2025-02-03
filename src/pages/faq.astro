@@ -7,7 +7,8 @@ import FAQList from "@/data/faq-list";
 import type { AccordionType } from "@/util/interface";
 import "@/components/interactive/animation.css";
 import Graphics from "@/components/faq-page/graphicsWrapper.astro";
-return Astro.redirect("/expired");
+import { BusinessInfo } from "@/data/business-info.js";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar

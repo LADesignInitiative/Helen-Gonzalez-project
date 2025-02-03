@@ -1,5 +1,7 @@
 ---
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import { BusinessInfo } from "@/data/business-info.js";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar pageTitle="Services">

@@ -3,7 +3,8 @@ import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import ContactForm from "@/components/contact-form/split.astro";
 import Banner from "@/components/small_banner/index.astro";
 import Leaf from "@/components/contact-form/leaf.png";
-return Astro.redirect("/expired");
+import { BusinessInfo } from "@/data/business-info.js";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar pageTitle="Contact Us">

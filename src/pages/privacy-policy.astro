@@ -1,8 +1,8 @@
 ---
 export const prerender = true;
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
-import NavBar from "@/components/navigation/standard/index.astro";
-import { BusinessInfo } from "@/data/business-info";
+import { BusinessInfo } from "@/data/business-info.js";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar

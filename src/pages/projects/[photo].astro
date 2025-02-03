@@ -41,6 +41,8 @@ export async function getStaticPaths() {
   }
 }
 const { imageObj, title } = Astro.props;
+import { BusinessInfo } from "@/data/business-info";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar

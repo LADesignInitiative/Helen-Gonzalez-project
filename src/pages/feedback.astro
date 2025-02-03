@@ -2,6 +2,8 @@
 import StandardNavBar from "@/layout/standard-nav-bar.astro";
 import ReviewForm from "@/components/reputation-app/index.astro";
 import Banner from "@/components/small_banner/index.astro";
+import { BusinessInfo } from "@/data/business-info.js";
+if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
 ---
 
 <StandardNavBar
