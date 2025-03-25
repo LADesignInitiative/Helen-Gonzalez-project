@@ -36,5 +36,5 @@ export const BusinessInfo = {
     { day: "Saturday", hours: "Closed" },
     { day: "Sunday", hours: "Closed" },
   ],
-  subscribed: false,
+  subscribed: true,
 };
