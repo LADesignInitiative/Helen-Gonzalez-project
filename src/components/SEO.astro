@@ -28,15 +28,15 @@ const jsonLD = jsonLDGenerator({
 <meta property="og:url" content={url} />
 <meta
   property="og:image"
-  content={image?.src || BusinessInfo.OpenGraphImg.src}
+  content={image?.src || `${url}${BusinessInfo.OpenGraphImg.src}`}
 />
 <meta
   property="og:image:url"
-  content={image?.src || BusinessInfo.OpenGraphImg.src}
+  content={image?.src || `${url}${BusinessInfo.OpenGraphImg.src}`}
 />
 <meta
   property="og:image:secure_url"
-  content={image || BusinessInfo.OpenGraphImg.src}
+  content={image || `${url}${BusinessInfo.OpenGraphImg.src}`}
 />
 <meta property="og:image:type" content="image/jpeg" />
 <meta property="og:image:width" content="1200" />
