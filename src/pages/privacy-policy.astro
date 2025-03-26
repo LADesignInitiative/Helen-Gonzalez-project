@@ -87,15 +87,11 @@ if (!BusinessInfo.subscribed) return Astro.redirect("/expired");
         <span style="text-[24px] text-black">
           <span style="text-[24px] text-black">
             <span data-custom-class="body_text">
-              Visit our website
-              <bdt class="block-component"></bdt>
-              at
+              Visit our website at
               <span style="text-white">
                 <bdt class="question"
-                  ><a
-                    href={BusinessInfo.websiteURL}
-                    target="_blank"
-                    data-custom-class="link">{BusinessInfo.websiteURL}</a
+                  ><a href="/" target="_blank" data-custom-class="link"
+                    >{BusinessInfo.websiteURL}</a
                   ></bdt
                 >
               </span>

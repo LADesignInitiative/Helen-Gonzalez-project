@@ -13,8 +13,8 @@ export const BusinessInfo = {
   websiteURL: "www.HardRockLandscapingCA.com",
   lastUpdated: "January 25, 2025",
   OpenGraphImg: {
-    src: "",
-    alt: "",
+    src: "/assets/images/OGImage.jpg",
+    alt: "Artificial Grass Installation",
   },
   facebook: "https://www.facebook.com/hardrocklandscapingservices/",
   twitter: "",
