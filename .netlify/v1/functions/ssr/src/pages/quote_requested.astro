@@ -1,0 +1,46 @@
+---
+import StandardNavBar from "@/layout/standard-nav-bar.astro";
+import Logo from "@/components/logoComponent.astro";
+import HomeButton from "@/components/buttons/home_button.astro";
+---
+
+<StandardNavBar pageTitle="Message Sent">
+  <div class="py-20">
+    <Logo width="300px" />
+    <h1 class="text-center font-bold">
+      Your request for a quote has been sent.
+    </h1>
+    <p class="text-center font-bold">
+      We will contact you as soon as possible.
+    </p>
+    <HomeButton customStyle="text-center mx-auto my-10 flex" />
+  </div>
+</StandardNavBar>
+<script is:inline>
+  document.addEventListener("astro:page-load", () => {
+    const callback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          if (entry.target.classList.contains("sinkTag")) {
+            entry.target.classList.remove("sink");
+          }
+        } else {
+          if (
+            entry.target.classList.contains("sinkTag") &&
+            !entry.target.classList.contains("sink")
+          ) {
+            entry.target.classList.add("sink");
+          }
+        }
+      });
+    };
+    const options = {
+      threshold: 0.1,
+    };
+    const observer = new IntersectionObserver(callback, options);
+    const SinkTag = document.getElementsByClassName("sinkTag");
+    for (var i = 0; i < SinkTag.length; i++) {
+      observer.observe(SinkTag[i]);
+    }
+  });
+</script>
