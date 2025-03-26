@@ -26,20 +26,14 @@ const jsonLD = jsonLDGenerator({
 <meta property="og:description" content={description} />
 <meta name="description" content={description} />
 <meta property="og:url" content={url} />
-{
-  image && (
-    <>
-      <meta
-        property="og:image"
-        content={typeof image === "string" ? image : image?.src}
-      />
-      <meta
-        property="og:image:url"
-        content={typeof image === "string" ? image : image?.src}
-      />
-    </>
-  )
-}
+<meta
+  property="og:image"
+  content={image?.src || BusinessInfo.OpenGraphImg.src}
+/>
+<meta
+  property="og:image:url"
+  content={image?.src || BusinessInfo.OpenGraphImg.src}
+/>
 <meta
   property="og:image:secure_url"
   content={image || BusinessInfo.OpenGraphImg.src}
