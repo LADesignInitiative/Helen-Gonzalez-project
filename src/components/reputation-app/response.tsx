@@ -53,21 +53,32 @@ const GoogleReviewRequest = () => {
         Can you also share your positive review on our Google Reviews Page? That
         would mean a lot to us.
       </p>
-      <CopyButton CopiedMessageRef={CopiedMessageRef} />
-
-      <a href={BusinessInfo.Google_review_url} target="_blank">
-        <button
-          type="button"
-          className="mx-auto flex gap-x-5 text-center mt-[60px] duration-500 py-[20px] px-[10px] text-[18px] min-[480px]:text-[20px] md:py-[24px]  md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-white text-secondaryC text-center my-[10px] font-secondaryF font-[500] transition-all active:translate-x-[1px] active:translate-y-[1px] hover:bg-slate-200 floatAnim"
+      <div className="grid justify-around w-full mt-10">
+        <div className="m-auto whitespace-nowrap font-bold text-2xl">
+          Step 1)
+        </div>
+        <CopyButton CopiedMessageRef={CopiedMessageRef} />
+      </div>
+      <div className="grid justify-around w-full font-bold text-2xl mt-10">
+        <div className="m-auto whitespace-nowrap text-center">Step 2)</div>
+        <a
+          href={BusinessInfo.Google_review_url}
+          target="_blank"
+          className="inline-block"
         >
-          <div>Post your feedback on Google</div>
-          <img
-            src={GoogleIcon.src}
-            alt="Google Icon"
-            className="w-[32px] aspect-square m-auto"
-          />
-        </button>
-      </a>
+          <button
+            type="button"
+            className="mx-auto flex gap-x-5 text-center mt-[60px] duration-500 py-[20px] px-[10px] text-[18px] min-[480px]:text-[20px] md:py-[24px]  md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-white text-secondaryC text-center my-[10px] font-secondaryF font-[500] transition-all active:translate-x-[1px] active:translate-y-[1px] hover:bg-slate-200 floatAnim"
+          >
+            <div>Post your feedback on Google</div>
+            <img
+              src={GoogleIcon.src}
+              alt="Google Icon"
+              className="w-[32px] aspect-square m-auto"
+            />
+          </button>
+        </a>
+      </div>
     </div>
   );
 };
@@ -80,7 +91,7 @@ const BadRatingResponse = () => {
         <input
           type="button"
           data-wait="Please wait..."
-          className="duration-500 py-[20px] px-[30px] text-[18px] min-[480px]:px-[50px] min-[480px]:text-[20px] md:py-[24px] md:px-[110px] md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-primaryC text-secondaryC text-center my-[10px] mr-[10px] font-secondaryF font-[500] transition-all hover:bg-slate-300"
+          className="duration-500 py-[20px] px-[30px] text-[18px] min-[480px]:px-[50px] min-[480px]:text-[20px] md:py-[24px] md:px-[110px] md:text-[22px] cursor-pointer rounded-[0px] no-underline inline-block border-[1px] border-solid border-primaryC bg-primaryC text-white text-center my-[10px] mr-[10px] font-secondaryF font-[500] transition-all hover:bg-slate-300"
           value="Go Home"
         />
       </a>
